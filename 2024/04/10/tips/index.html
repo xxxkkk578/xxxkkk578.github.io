@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh"><head>
+<title>日常应用技巧总结 - 张岩的博客</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="CTF,web,北京理工大学,武钢三中,github,社会,文学,网络安全">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="description" content="tips0、联系 和 指导编程 计算机网络 操作系统 其他技术 1、切换python版本只需要调整环境变量中的各python次序，注意将script置于对应python下方（没用 在cmd中使用以下命令 1where python  找到对应目录下的python.exe文件后将其修改为对应版本的名称 如：python3.10.exe 之后便可使用对应版本的python进行pip 1python3.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日常应用技巧总结">
+<meta property="og:url" content="http://xxxkkk578.github.io/2024/04/10/tips/index.html">
+<meta property="og:site_name" content="张岩的博客">
+<meta property="og:description" content="tips0、联系 和 指导编程 计算机网络 操作系统 其他技术 1、切换python版本只需要调整环境变量中的各python次序，注意将script置于对应python下方（没用 在cmd中使用以下命令 1where python  找到对应目录下的python.exe文件后将其修改为对应版本的名称 如：python3.10.exe 之后便可使用对应版本的python进行pip 1python3.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-10T11:16:51.000Z">
+<meta property="article:modified_time" content="2024-04-10T11:19:07.401Z">
+<meta property="article:author" content="张岩">
+<meta property="article:tag" content="tips">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1712748112604">
+
+<link rel="stylesheet" href="/css/style.css?v=1712748112604">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1712748112604">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1712748112604"></script>
+
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.1.1"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://i.pinimg.com/474x/d5/20/a8/d520a8a9e2919f9beb22a2b31662df68.jpg)"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon" href="/" title="张岩"><img src="/images/avatar.jpg" alt="张岩"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="张岩">
+            <img src="/images/avatar.jpg" alt="张岩" alt="张岩">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>4</div>
+        <div><span>标签</span>4</div>
+        <div><span>分类</span>2</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        
+        
+        
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+   
+    <div class="nexmoe-copyright">
+        &copy; 2024 张岩
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 50%;"> 
+            <img src="/images/04.jpg" alt="日常应用技巧总结" loading="lazy">
+            <h1>日常应用技巧总结</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年04月10日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%9F%A5%E8%AF%86%E7%B1%BB/">知识类</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h1><h2 id="0、"><a href="#0、" class="headerlink" title="0、"></a>0、</h2><p>联系 和 指导<br>编程 计算机网络 操作系统 其他技术</p>
+<h2 id="1、切换python版本"><a href="#1、切换python版本" class="headerlink" title="1、切换python版本"></a>1、切换python版本</h2><p>只需要调整环境变量中的各python次序，注意将script置于对应python下方（没用</p>
+<p>在cmd中使用以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">where python<br></code></pre></td></tr></table></figure>
+
+<p>找到对应目录下的python.exe文件后将其修改为对应版本的名称 如：python3.10.exe</p>
+<p>之后便可使用对应版本的python进行pip</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">python3.10 -m pip install gmpy2<br></code></pre></td></tr></table></figure>
+
+<h2 id="2、word替换下箭头为回车符"><a href="#2、word替换下箭头为回车符" class="headerlink" title="2、word替换下箭头为回车符"></a>2、word替换下箭头为回车符</h2><p>查找替换</p>
+<p>将^l （小写L）全部替换为^p即可</p>
+<h2 id="3、应用md5值的校验"><a href="#3、应用md5值的校验" class="headerlink" title="3、应用md5值的校验"></a>3、应用md5值的校验</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">certutil -hashfile filename MD5<br>certutil -hashfile filename SHA1<br>certutil -hashfile filename SHA256<br></code></pre></td></tr></table></figure>
+
+<h2 id="4、出现解压错误或者下载错误问题"><a href="#4、出现解压错误或者下载错误问题" class="headerlink" title="4、出现解压错误或者下载错误问题"></a>4、出现解压错误或者下载错误问题</h2><p>往往是因为含有中文路径</p>
+<h2 id="5、kali安装软件"><a href="#5、kali安装软件" class="headerlink" title="5、kali安装软件"></a>5、kali安装软件</h2><p>一律使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt install <br></code></pre></td></tr></table></figure>
+
+<p>新版本的kali使用此命令是包含了apt-get install 和最简单的apt install </p>
+<h2 id="6、nano使用方法-mousepad-or-gedit-有gui"><a href="#6、nano使用方法-mousepad-or-gedit-有gui" class="headerlink" title="6、nano使用方法 (mousepad or gedit 有gui)"></a>6、nano使用方法 (mousepad or gedit 有gui)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">copy：ctrl+u<br>search: ctrl+w<br>turn page :ctrl+y for the last page , ctrl+v for the next page<br>save: ctrl+o <br>escape:ctrl+x<br></code></pre></td></tr></table></figure>
+
+<h2 id="7、kali图标很小"><a href="#7、kali图标很小" class="headerlink" title="7、kali图标很小"></a>7、kali图标很小</h2><p>点开左上角后搜索 开启即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">kalihidpimode<br></code></pre></td></tr></table></figure>
+
+<h2 id="8、提升kali虚拟机速度"><a href="#8、提升kali虚拟机速度" class="headerlink" title="8、提升kali虚拟机速度"></a>8、提升kali虚拟机速度</h2><p>1、移除不必要的设备</p>
+<p>2、使用以下命令查看自己电脑的cpu数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">dxdiag<br></code></pre></td></tr></table></figure>
+
+<p>然后拉内存 和 cpu</p>
+<p>3、编辑-首选项-内存-额外内存-调整所有虚拟机内存使其适应预留的主机RAM</p>
+<p>优先级-高 正常 快照两个取消勾选</p>
+<p>设别-可移动介质-取消勾选</p>
+<h2 id="9、chrome下载文件检测到病毒"><a href="#9、chrome下载文件检测到病毒" class="headerlink" title="9、chrome下载文件检测到病毒"></a>9、chrome下载文件检测到病毒</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">regedit<br></code></pre></td></tr></table></figure>
+<p>找到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments<br></code></pre></td></tr></table></figure>
+<p>将</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ScanWithAntiVirus<br></code></pre></td></tr></table></figure>
+<p>的值修改为1即可</p>
+<h2 id="10-python-help"><a href="#10-python-help" class="headerlink" title="10.python help"></a>10.python help</h2><p>interactive python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">help</span>(<span class="hljs-string">&#x27;crypt&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<p>to check the help of selected part<br>use</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">:q<br></code></pre></td></tr></table></figure>
+<p>to quit</p>
+<h2 id="11、zsteg工具安装"><a href="#11、zsteg工具安装" class="headerlink" title="11、zsteg工具安装"></a>11、zsteg工具安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt install gem<br>gem sources -l<br>gem sources --remove https://rubygems.org/<br>gem sources -a http://gems.ruby-china.com/<br>gem install zsteg<br></code></pre></td></tr></table></figure>
+<h2 id="12、cpp文件变为exe"><a href="#12、cpp文件变为exe" class="headerlink" title="12、cpp文件变为exe"></a>12、cpp文件变为exe</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">gcc main.cpp -o target.exe<br></code></pre></td></tr></table></figure>
+<h2 id="13、大容量表格打开方法"><a href="#13、大容量表格打开方法" class="headerlink" title="13、大容量表格打开方法"></a>13、大容量表格打开方法</h2><p>新建一个excel文档<br>数据 - 新建查询 - 从文件 - 从工作簿<br>导入数据后即可</p>
+<h2 id="14、修改新建文件列表"><a href="#14、修改新建文件列表" class="headerlink" title="14、修改新建文件列表"></a>14、修改新建文件列表</h2><p>win+r regedit 打开注册表<br>然后到如下地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Discardable\PostSetup\ShellNew<br></code></pre></td></tr></table></figure>
+<p>然后再classes里面添加对应的后缀名<br>在</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">HKEY_CLASSES_ROOT<br></code></pre></td></tr></table></figure>
+<p>目录下 搜索你想要的后缀<br>在该后缀内 添加项 改名为ShellNew<br>同时添加字符串 NullFile</p>
+<h2 id="15、windows-powershell无法运行脚本"><a href="#15、windows-powershell无法运行脚本" class="headerlink" title="15、windows powershell无法运行脚本"></a>15、windows powershell无法运行脚本</h2><p>尝试运行dos命令<br>报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">CategoryInfo          : ObjectNotFound: (C:\Users\alpha\Desktop\k.jpg\b+k.txt\a:String) [Copy-Item], ItemNotFoun    dException     + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.CopyItemCommand<br></code></pre></td></tr></table></figure>
+<p>修改方式如下<br>使用管理员权限打开windows powershell<br>然后执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">set-ExecutionPolicy RemoteSigned<br></code></pre></td></tr></table></figure>
+<p>之后查看计算机上的现用策略</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">get-ExecutionPolicy<br></code></pre></td></tr></table></figure>
+<p>如果为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">RemoteSigned<br></code></pre></td></tr></table></figure>
+<p>则正确</p>
+<h2 id="16、conda换源"><a href="#16、conda换源" class="headerlink" title="16、conda换源"></a>16、conda换源</h2><p>使用中科大源</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/<br>conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/<br>conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/<br>conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/<br>conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/<br>conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/<br></code></pre></td></tr></table></figure>
+<p>使每次使用时显示源</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">conda config --set show_channel_urls yes<br></code></pre></td></tr></table></figure>
+<h2 id="17、ubuntu使用apt时报错"><a href="#17、ubuntu使用apt时报错" class="headerlink" title="17、ubuntu使用apt时报错"></a>17、ubuntu使用apt时报错</h2><p>发现有两个问题<br>首先是源有问题<br>使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">lsb_release -a<br></code></pre></td></tr></table></figure>
+<p>查看自己的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">No LSB modules are available.<br>Distributor ID:	Ubuntu<br>Description:	Ubuntu 22.04.4 LTS<br>Release:	22.04<br>Codename:	jammy<br></code></pre></td></tr></table></figure>
+<p>则应该使用jammy源<br>其次是dns解析设置错误<br>使用如下命令编辑dns文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo vim /etc/resolv.conf<br></code></pre></td></tr></table></figure>
+<p>清空 写入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">nameserver 8.8.8.8<br>nameserver 114.114.114.114<br></code></pre></td></tr></table></figure>
+<p>即可完成配置<br>之后执行以下命令测试并更新</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt update &amp;&amp; apt upgrade<br></code></pre></td></tr></table></figure>
+<h2 id="18、pip换源"><a href="#18、pip换源" class="headerlink" title="18、pip换源"></a>18、pip换源</h2><p>使用以下命令即可永久修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple<br></code></pre></td></tr></table></figure>
+<h2 id="19、ida-常用命令"><a href="#19、ida-常用命令" class="headerlink" title="19、ida 常用命令"></a>19、ida 常用命令</h2><p>shift + f12 查看字符串<br>f5 反汇编<br>x 查找变量的引用</p>
+<h2 id="20、conda使用方法"><a href="#20、conda使用方法" class="headerlink" title="20、conda使用方法"></a>20、conda使用方法</h2><p>创建新环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">conda create --name 环境名称 python==3.7<br></code></pre></td></tr></table></figure>
+<p>查询已有环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">conda env list<br></code></pre></td></tr></table></figure>
+<p>激活环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">source activate 环境名称<br></code></pre></td></tr></table></figure>
+<p>关闭环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">conda deactivate<br></code></pre></td></tr></table></figure>
+<p>复制环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">conda create --name &lt;new_env_name&gt; --clone &lt;copied_env_name&gt;<br></code></pre></td></tr></table></figure>
+<p>删除环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">conda remove --name &lt;env_name&gt; --all<br></code></pre></td></tr></table></figure>
+<p>当前环境包管理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">1）搜索包：conda search<br>2）查看已安装包：conda list<br>3）给指定某个环境安装包：conda install --name &lt;env_name&gt; &lt;package_name&gt;<br>4）给当前环境中安装包：conda install &lt;package_name&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="21、mysql使用"><a href="#21、mysql使用" class="headerlink" title="21、mysql使用"></a>21、mysql使用</h2><p>mysql的用户名及密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">lazarus<br></code></pre></td></tr></table></figure>
+<p>打开</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">MySQL 8.3 Command Line Client - Unicode<br></code></pre></td></tr></table></figure>
+<p>之后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">show databases；<br></code></pre></td></tr></table></figure>
+<p>可以看到数据库 则证明验证成功<br>新建数据库user</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">create database user; <br></code></pre></td></tr></table></figure>
+<p>使用user</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">use user;<br></code></pre></td></tr></table></figure>
+<p>添加表username 用于记录账号和密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">create table username(<br>user varchar(25),<br>password varchar(25)<br>);<br></code></pre></td></tr></table></figure>
+<p>在表里插入数据 记录用户密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">insert into username(user,password)<br>value (&quot;root&quot;,&quot;root&quot;);<br></code></pre></td></tr></table></figure>
+<p>查看username表中的内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">select * from username;<br></code></pre></td></tr></table></figure>
+<p>设置数据库的密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">SET PASSWORD FOR root@localhost = &#x27;123&#x27;;<br></code></pre></td></tr></table></figure>
+<h2 id="22、查看网页源代码"><a href="#22、查看网页源代码" class="headerlink" title="22、查看网页源代码"></a>22、查看网页源代码</h2><p>f12 或者 如下方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">view-source:<br></code></pre></td></tr></table></figure>
+
+    
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>张岩<br>
+        <strong>本文链接：</strong><a href="http://xxxkkk578.github.io/2024/04/10/tips/" title="http:&#x2F;&#x2F;xxxkkk578.github.io&#x2F;2024&#x2F;04&#x2F;10&#x2F;tips&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;xxxkkk578.github.io&#x2F;2024&#x2F;04&#x2F;10&#x2F;tips&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/tips/" rel="tag">tips</a>
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1712748112588"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="搜索" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>
