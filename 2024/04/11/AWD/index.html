@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh"><head>
+<title>AWD - 张岩的博客</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="CTF,web,北京理工大学,武钢三中,github,社会,文学,网络安全">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="shortcut icon" href="/images/icon.png" type="image/png" />
+<meta name="description" content="启动首先修改ssh密码 1passwd username 然后修改mysql密码 1show databases; 选择相应数据库 1use mysql; 修改数据库密码 1set password for root@localhost &#x3D; password(&#x27;Zhangnuot1anxiawudi_&#x27;); 源码备份打包目录 1tar -zcvf archive_name.ta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWD">
+<meta property="og:url" content="http://xxxkkk578.github.io/2024/04/11/AWD/index.html">
+<meta property="og:site_name" content="张岩的博客">
+<meta property="og:description" content="启动首先修改ssh密码 1passwd username 然后修改mysql密码 1show databases; 选择相应数据库 1use mysql; 修改数据库密码 1set password for root@localhost &#x3D; password(&#x27;Zhangnuot1anxiawudi_&#x27;); 源码备份打包目录 1tar -zcvf archive_name.ta">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-11T07:36:16.000Z">
+<meta property="article:modified_time" content="2024-04-11T11:39:23.984Z">
+<meta property="article:author" content="张岩">
+<meta property="article:tag" content="CTF,AWD">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1712838824699">
+
+<link rel="stylesheet" href="/css/style.css?v=1712838824699">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1712838824699">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1712838824699"></script>
+
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.1.1"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://i.pinimg.com/474x/d5/20/a8/d520a8a9e2919f9beb22a2b31662df68.jpg)"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon" href="/" title="张岩"><img src="/images/avatar.jpg" alt="张岩"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="张岩">
+            <img src="/images/avatar.jpg" alt="张岩" alt="张岩">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>8</div>
+        <div><span>标签</span>7</div>
+        <div><span>分类</span>3</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章分类">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章分类
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        
+        
+        
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+   
+    <div class="nexmoe-copyright">
+        &copy; 2024 张岩
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 50%;"> 
+            <img src="/images/06.jpg" alt="AWD" loading="lazy">
+            <h1>AWD</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年04月11日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/CTF/">CTF</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>首先修改ssh密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">passwd username<br></code></pre></td></tr></table></figure>
+<p>然后修改mysql密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">show databases;<br></code></pre></td></tr></table></figure>
+<p>选择相应数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">use mysql;<br></code></pre></td></tr></table></figure>
+<p>修改数据库密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">set password for root@localhost = password(&#x27;Zhangnuot1anxiawudi_&#x27;);<br></code></pre></td></tr></table></figure>
+<p>源码备份<br>打包目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tar -zcvf archive_name.tar.gz directory_to_compress<br></code></pre></td></tr></table></figure>
+<p>解包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tar -zxvf archive_name.tar.gz<br></code></pre></td></tr></table></figure>
+
+<p>寻找本地flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">grep -r &quot;flag&quot; /var/www/html/<br></code></pre></td></tr></table></figure>
+<p>开启禁ping 必须是root用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">echo &quot;1&quot; &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all<br></code></pre></td></tr></table></figure>
+<p>关闭禁ping</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">echo &quot;0&quot; &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all<br></code></pre></td></tr></table></figure>
+<p>压缩源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tar -cvf web.tar /var/www/html<br></code></pre></td></tr></table></figure>
+<p>解压缩源码 并将源码解压缩到网站根目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tar -xvf web.tar -c /var/www/html<br></code></pre></td></tr></table></figure>
+<p>将源码放在合适的位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mv web.tar /tmp<br></code></pre></td></tr></table></figure>
+<p>对各级目录进行权限设置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">chmod 0555 /var/www/html/*<br></code></pre></td></tr></table></figure>
+<p>以及</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">chmod 0555 /var/www/html/<br></code></pre></td></tr></table></figure>
+<p>改变文件的组来严格限制权限</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">chown -R root:root /var/www/html/<br></code></pre></td></tr></table></figure>
+<h1 id="php"><a href="#php" class="headerlink" title="php"></a>php</h1><p>找到php配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/etc/php/&#123;version&#125;/php.ini<br></code></pre></td></tr></table></figure>
+<p>禁用高危函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">disable_functions = dl,exec,system,passthru,popen,proc_open,pcntl_exec,shell_exec,mail,imap_open,imap_mail,putenv,ini_set,apache_setenv,symlink,link<br></code></pre></td></tr></table></figure>
+<p>限制用户访问活动区域</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">open_basedir=/var/www/html<br></code></pre></td></tr></table></figure>
+<p>禁用魔术引号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">magic_quotes_gpc = Off<br></code></pre></td></tr></table></figure>
+<p>关闭php伪协议</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">allow_url_fopen = Off<br>allow_url_include = Off<br></code></pre></td></tr></table></figure>
+<p>重启php</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo service php7.0-fpm restart<br>sudo systemctl restart php7.0-fpm.service<br></code></pre></td></tr></table></figure>
+<h1 id="mysql数据库"><a href="#mysql数据库" class="headerlink" title="mysql数据库"></a>mysql数据库</h1><p>备份某个数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mysqldump –u username –p password databasename &gt; target.sql<br></code></pre></td></tr></table></figure>
+<p>备份所有数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mysqldump –all -databases &gt; all.sql<br></code></pre></td></tr></table></figure>
+<p>导入数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mysql –u username –p password database &lt; from.sql<br></code></pre></td></tr></table></figure>
+<p>重启mysql服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo service mysql restart<br>sudo systemctl restart mysql<br></code></pre></td></tr></table></figure>
+<h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><p>限制IP登陆方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo nano /etc/ssh/sshd_config       //以root权限编辑SSH配置文件<br>AllowUsers username@192.168.0.100    //找到并编辑以下行，确保其取消注释并设置为所需的IP地址<br></code></pre></td></tr></table></figure>
+<p>禁用root远程登录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo nano /etc/ssh/sshd_config       //以root权限编辑SSH配置文件<br>AllowUsers username@192.168.0.100    //找到并编辑以下行，确保其取消注释并设置为所需的IP地址<br></code></pre></td></tr></table></figure>
+<p>重启ssh服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo service sshd restart<br>sudo systemctl restart sshd.service<br></code></pre></td></tr></table></figure>
+<h1 id="应急响应"><a href="#应急响应" class="headerlink" title="应急响应"></a>应急响应</h1><p>进程查询</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">netstat<br>ps -aux<br>netstat -apt<br></code></pre></td></tr></table></figure>
+<p>杀掉进程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">kill -9 pid            //Linux上<br>taskkill /f /pid pid   //Windows上<br></code></pre></td></tr></table></figure>
+<p>搜索webshell文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">find /var/www/html -name *.php -mmin -5                        //查看最近5分钟修改文件<br>find ./ -name &#x27;*.php&#x27; | xargs wc -l | sort -u                  //寻找行数最短文件，一般有可能是一句话木马<br>grep -r --include=*.php  &#x27;[^a-z]eval($_POST&#x27;  /var/www/html    //查包含关键字的php文件<br>find /var/www/html -type f -name &quot;*.php&quot; | xargs grep &quot;eval(&quot; |more //在Linux系统中使用find、grep和xargs命令的组合，用于在指定目录（/var/www/html）下查找所有以.php为扩展名的文件，并搜索这些文件中包含字符串&quot;eval(&quot;的行，并使用more命令来分页显示结果以便在输出较长时进行逐页查看<br></code></pre></td></tr></table></figure>
+<p>查杀不死马</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ps -aux | grep www-data | grep -v grep | awk &#x27;&#123;print $2&#125;&#x27; | xargs kill -9<br></code></pre></td></tr></table></figure>
+<p>重启服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">service php-fpm restart<br></code></pre></td></tr></table></figure>
+<h1 id="自由攻击"><a href="#自由攻击" class="headerlink" title="自由攻击"></a>自由攻击</h1><p>网段扫描</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>,<span class="hljs-number">255</span>): <br>    url = <span class="hljs-string">&quot;http://192.168.1.&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(x) <br>    <span class="hljs-keyword">try</span>: <br>        r = requests.post(url) <br>        <span class="hljs-built_in">print</span>(url) <br>        <span class="hljs-keyword">except</span>: <br>        <span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
+<p>主要工具</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">nmap<br>nessus<br>metasploit<br></code></pre></td></tr></table></figure>
+<p>常见漏洞poc及exp</p>
+
+    
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>张岩<br>
+        <strong>本文链接：</strong><a href="http://xxxkkk578.github.io/2024/04/11/AWD/" title="http:&#x2F;&#x2F;xxxkkk578.github.io&#x2F;2024&#x2F;04&#x2F;11&#x2F;AWD&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;xxxkkk578.github.io&#x2F;2024&#x2F;04&#x2F;11&#x2F;AWD&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/CTF-AWD/" rel="tag">CTF,AWD</a>
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1712838824680"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="搜索" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>

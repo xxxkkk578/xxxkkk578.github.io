@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh"><head>
+<title>docker相关 - 张岩的博客</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="CTF,web,北京理工大学,武钢三中,github,社会,文学,网络安全">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="shortcut icon" href="/images/icon.png" type="image/png" />
+<meta name="description" content="docker安装dvwa 1docker pull vulnerables&#x2F;web-dvwa 启用容器 1docker run --rm -it -p 30015:80 vulnerables&#x2F;web-dvwa 默认用户名和密码 12adminpassword 数据库的用户名和密码 12rootp@ssw0rd 第一次使用的使用记得创建数据库 1Create&#x2F;Reset Database 关闭所有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker相关">
+<meta property="og:url" content="http://xxxkkk578.github.io/2024/04/11/docker/index.html">
+<meta property="og:site_name" content="张岩的博客">
+<meta property="og:description" content="docker安装dvwa 1docker pull vulnerables&#x2F;web-dvwa 启用容器 1docker run --rm -it -p 30015:80 vulnerables&#x2F;web-dvwa 默认用户名和密码 12adminpassword 数据库的用户名和密码 12rootp@ssw0rd 第一次使用的使用记得创建数据库 1Create&#x2F;Reset Database 关闭所有">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-11T11:10:16.000Z">
+<meta property="article:modified_time" content="2024-04-11T12:31:53.942Z">
+<meta property="article:author" content="张岩">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1712838824698">
+
+<link rel="stylesheet" href="/css/style.css?v=1712838824698">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1712838824698">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1712838824698"></script>
+
+ 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.1.1"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://i.pinimg.com/474x/d5/20/a8/d520a8a9e2919f9beb22a2b31662df68.jpg)"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon" href="/" title="张岩"><img src="/images/avatar.jpg" alt="张岩"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="张岩">
+            <img src="/images/avatar.jpg" alt="张岩" alt="张岩">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>8</div>
+        <div><span>标签</span>7</div>
+        <div><span>分类</span>3</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章分类">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章分类
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        
+        
+        
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+   
+    <div class="nexmoe-copyright">
+        &copy; 2024 张岩
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 50%;"> 
+            <img src="/images/08.jpg" alt="docker相关" loading="lazy">
+            <h1>docker相关</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年04月11日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%9F%A5%E8%AF%86%E7%B1%BB/">知识类</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><p>安装dvwa</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker pull vulnerables/web-dvwa<br></code></pre></td></tr></table></figure>
+<p>启用容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker run --rm -it -p 30015:80 vulnerables/web-dvwa<br></code></pre></td></tr></table></figure>
+<p>默认用户名和密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">admin<br>password<br></code></pre></td></tr></table></figure>
+<p>数据库的用户名和密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">root<br>p@ssw0rd<br></code></pre></td></tr></table></figure>
+<p>第一次使用的使用记得创建数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Create/Reset Database<br></code></pre></td></tr></table></figure>
+<p>关闭所有容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker stop $(docker ps -a -q)<br></code></pre></td></tr></table></figure>
+<p>查看正在运行的容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker ps<br></code></pre></td></tr></table></figure>
+<p>删除镜像 df1 为image id 的前三个字母</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker rmi df1<br></code></pre></td></tr></table></figure>
+<p>删除所有容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker rm $(docker ps -a -q)<br></code></pre></td></tr></table></figure>
+<p>docker 命令可以正常执行 但是输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker ps -a<br></code></pre></td></tr></table></figure>
+<p>然后启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker run -dit -p 30015:80 sagikazarmark/dvwa<br></code></pre></td></tr></table></figure>
+
+
+    
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>张岩<br>
+        <strong>本文链接：</strong><a href="http://xxxkkk578.github.io/2024/04/11/docker/" title="http:&#x2F;&#x2F;xxxkkk578.github.io&#x2F;2024&#x2F;04&#x2F;11&#x2F;docker&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;xxxkkk578.github.io&#x2F;2024&#x2F;04&#x2F;11&#x2F;docker&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/docker/" rel="tag">docker</a>
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1712838824680"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="搜索" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>
